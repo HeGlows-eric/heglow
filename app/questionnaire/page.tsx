@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
+import { patchFlow } from "@/lib/flow";
 
 const hairTypes = ["Straight", "Wavy", "Curly", "Coily"];
 const skinTypes = ["Oily", "Dry", "Combination", "Normal", "Sensitive"];
@@ -46,6 +48,8 @@ export default function QuestionnairePage() {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+
   const saveResponses = async () => {
     if (
       !hairType ||
@@ -81,15 +85,22 @@ export default function QuestionnairePage() {
       return;
     }
 
-    setStatus("Saved successfully.");
-    setHairType("");
-    setSkinType("");
-    setSkinConcern("");
-    setBodyType("");
-    setClimate("");
-    setAge("");
-    setGoal("");
-    setLoading(false);
+    patchFlow({
+  answers: {
+    hairType,
+    skinType,
+    skinConcern,
+    bodyType,
+    climate,
+    age,
+    goal,
+  },
+});
+
+setStatus("Saved successfully.");
+setLoading(false);
+
+router.push("/results");
   };
 
   return (

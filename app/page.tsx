@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white flex items-center justify-center px-6">
@@ -15,12 +17,12 @@ export default function Home() {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#"
+          <Link
+            href="/upload"
             className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black transition hover:bg-white/90"
           >
             Get early access
-          </a>
+          </Link>
 
           <a
             href="#features"
