@@ -103,23 +103,26 @@ export default function QuestionnairePage() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="mx-auto flex min-h-screen w-full max-w-md flex-col px-5 py-6">
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#0f0d0b] px-4 py-6 text-[#f6efe8]">
+      <div className="mx-auto flex min-h-[calc(100vh-3rem)] w-full max-w-md flex-col">
+
         <button
           onClick={() => router.back()}
-          className="mb-6 w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10"
+          className="mb-6 w-fit rounded-full border border-[#f5a623]/15 bg-[#17130f] px-4 py-2 text-sm text-[#d8ccc0]/80 transition hover:border-[#f5a623]/30 hover:bg-[#211a14]"
         >
           ← Back
         </button>
 
         <div>
-          <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#f5a623]/65">
             Step 2 of 3
           </p>
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight">
+
+          <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[#fff8f0] sm:text-4xl">
             Quick questionnaire
           </h1>
-          <p className="mt-3 text-sm leading-6 text-white/60">
+
+          <p className="mt-3 text-sm leading-6 text-[#d8ccc0]/70">
             Answer a few quick questions so HeGlows can build your personal
             report.
           </p>
@@ -127,12 +130,14 @@ export default function QuestionnairePage() {
 
         <form onSubmit={saveResponses} className="mt-8 flex flex-1 flex-col">
           <div className="space-y-4">
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-              <label className="mb-2 block text-sm font-medium text-white/85">
+
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
                 Hair type
               </label>
+
               <select
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none"
+                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none focus:border-[#f5a623]/50"
                 value={hairType}
                 onChange={(e) => setHairType(e.target.value)}
               >
@@ -145,12 +150,13 @@ export default function QuestionnairePage() {
               </select>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-              <label className="mb-2 block text-sm font-medium text-white/85">
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
                 Skin type
               </label>
+
               <select
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none"
+                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none focus:border-[#f5a623]/50"
                 value={skinType}
                 onChange={(e) => setSkinType(e.target.value)}
               >
@@ -163,12 +169,13 @@ export default function QuestionnairePage() {
               </select>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-              <label className="mb-2 block text-sm font-medium text-white/85">
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
                 Skin concern
               </label>
+
               <select
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none"
+                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none focus:border-[#f5a623]/50"
                 value={skinConcern}
                 onChange={(e) => setSkinConcern(e.target.value)}
               >
@@ -181,12 +188,13 @@ export default function QuestionnairePage() {
               </select>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-              <label className="mb-2 block text-sm font-medium text-white/85">
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
                 Body type
               </label>
+
               <select
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none"
+                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none focus:border-[#f5a623]/50"
                 value={bodyType}
                 onChange={(e) => setBodyType(e.target.value)}
               >
@@ -199,12 +207,13 @@ export default function QuestionnairePage() {
               </select>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-              <label className="mb-2 block text-sm font-medium text-white/85">
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
                 Climate / living environment
               </label>
+
               <select
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none"
+                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none focus:border-[#f5a623]/50"
                 value={climate}
                 onChange={(e) => setClimate(e.target.value)}
               >
@@ -217,12 +226,13 @@ export default function QuestionnairePage() {
               </select>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-              <label className="mb-2 block text-sm font-medium text-white/85">
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
                 Age
               </label>
+
               <input
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none"
+                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none placeholder:text-[#d8ccc0]/30 focus:border-[#f5a623]/50"
                 type="number"
                 min="10"
                 max="100"
@@ -232,12 +242,13 @@ export default function QuestionnairePage() {
               />
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
-              <label className="mb-2 block text-sm font-medium text-white/85">
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
                 Goal
               </label>
+
               <select
-                className="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none"
+                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none focus:border-[#f5a623]/50"
                 value={goal}
                 onChange={(e) => setGoal(e.target.value)}
               >
@@ -249,10 +260,11 @@ export default function QuestionnairePage() {
                 ))}
               </select>
             </div>
+
           </div>
 
           {status && (
-            <p className="mt-5 text-sm text-white/70">
+            <p className="mt-5 text-sm text-[#f5b544]">
               {status}
             </p>
           )}
@@ -260,10 +272,11 @@ export default function QuestionnairePage() {
           <button
             type="submit"
             disabled={loading}
-            className="mt-6 h-14 rounded-2xl bg-white text-base font-semibold text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-50"
+            className="mt-6 h-14 w-full rounded-2xl bg-gradient-to-r from-[#ffc15a] to-[#f59b20] px-4 text-base font-semibold text-[#17100a] shadow-[0_8px_30px_rgba(245,166,35,0.2)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? "Saving..." : "Generate my report"}
           </button>
+
         </form>
       </div>
     </main>

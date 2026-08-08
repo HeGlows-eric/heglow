@@ -2,89 +2,105 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="relative mx-auto flex min-h-screen w-full max-w-md flex-col px-5 py-6">
-      <header className="flex items-center justify-between">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/40">
-          HeGlows
-        </p>
+    <main className="min-h-screen bg-[#0f0d0b] text-[#f6efe8]">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-md flex-col px-5 py-6">
 
-        <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">
-          Mobile MVP
-        </div>
-      </header>
+        <header className="flex items-center justify-between">
+          <div>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#f6efe8]/50">
+              HeGlows
+            </p>
+          </div>
 
-      <section className="flex flex-1 flex-col justify-center pb-8 pt-10">
-        <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70">
-          <span className="h-2 w-2 rounded-full bg-white" />
-          AI glow-up roadmap
-        </div>
+          <div className="rounded-full border border-[#f5a623]/20 bg-[#f5a623]/5 px-3 py-1 text-[11px] text-[#f6efe8]/70">
+            Mobile MVP
+          </div>
+        </header>
 
-        <h1 className="max-w-xs text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-5xl">
-          Build your glow-up with a clear plan.
-        </h1>
+        <section className="flex flex-1 flex-col justify-center pb-8 pt-10">
 
-        <p className="mt-5 max-w-sm text-sm leading-6 text-white/65 sm:text-base">
-          HeGlows gives you a simple mobile-first plan for your looks,
-          confidence, and daily habits.
-        </p>
+          <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[#f5a623]/20 bg-[#f5a623]/5 px-3 py-1 text-[11px] text-[#f5b544]/90">
+            <span className="h-2 w-2 rounded-full bg-[#f5a623] shadow-[0_0_12px_rgba(245,166,35,0.7)]" />
+            AI glow-up roadmap
+          </div>
 
-        <div className="mt-8 flex flex-col gap-3">
-          <Link
-            href="/upload"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-white px-5 text-sm font-semibold text-black transition active:scale-[0.99]"
-          >
-            Get early access
-          </Link>
+          <h1 className="max-w-xs text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#fff8f0] sm:text-5xl">
+            Build your glow-up with a{" "}
+            <span className="text-[#f5a623]">clear plan.</span>
+          </h1>
 
-          <a
-            href="#preview"
-            className="inline-flex h-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-5 text-sm font-medium text-white transition active:scale-[0.99]"
-          >
-            See a sample report
-          </a>
-        </div>
-
-        <div
-          id="preview"
-          className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-4"
-        >
-          <p className="text-[11px] uppercase tracking-[0.25em] text-white/35">
-            Preview
+          <p className="mt-5 max-w-sm text-sm leading-6 text-[#d8ccc0]/75 sm:text-base">
+            HeGlows gives you a simple mobile-first plan for your looks,
+            confidence, and daily habits.
           </p>
-          <h2 className="mt-2 text-lg font-semibold">
-            What your report will look like
-          </h2>
 
-          <div className="mt-4 space-y-3">
-            <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
-              <p className="text-[11px] uppercase tracking-[0.25em] text-white/35">
-                Skin
-              </p>
-              <p className="mt-1 text-sm text-white/75">
-                Basic routine, oil control, and daily consistency.
-              </p>
-            </div>
+          <div className="mt-8 flex flex-col gap-3">
 
-            <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
-              <p className="text-[11px] uppercase tracking-[0.25em] text-white/35">
-                Hair
-              </p>
-              <p className="mt-1 text-sm text-white/75">
-                Style direction based on your face and hair type.
-              </p>
-            </div>
+            <Link
+              href="/upload"
+              className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-[#ffc15a] to-[#f59b20] px-5 text-sm font-semibold text-[#17100a] shadow-[0_8px_30px_rgba(245,166,35,0.25)] transition hover:brightness-105 active:scale-[0.99]"
+            >
+              Get early access
+            </Link>
 
-            <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
-              <p className="text-[11px] uppercase tracking-[0.25em] text-white/35">
-                Daily plan
-              </p>
-              <p className="mt-1 text-sm text-white/75">
-                Simple actions you can actually follow every day.
-              </p>
+            <a
+              href="#preview"
+              className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#f5a623]/15 bg-[#1a1511] px-5 text-sm font-medium text-[#f6efe8]/90 transition hover:border-[#f5a623]/30 hover:bg-[#211a14] active:scale-[0.99]"
+            >
+              See a sample report
+            </a>
+
+          </div>
+
+          <div
+            id="preview"
+            className="mt-8 rounded-3xl border border-[#f5a623]/15 bg-[#17130f] p-4 shadow-[0_0_40px_rgba(245,166,35,0.05)]"
+          >
+            <p className="text-[11px] uppercase tracking-[0.25em] text-[#f5a623]/70">
+              Preview
+            </p>
+
+            <h2 className="mt-2 text-lg font-semibold text-[#fff8f0]">
+              What your report will look like
+            </h2>
+
+            <div className="mt-4 space-y-3">
+
+              <div className="rounded-2xl border border-[#f5a623]/10 bg-[#0f0d0b] p-4">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-[#f5a623]/65">
+                  Skin
+                </p>
+
+                <p className="mt-1 text-sm text-[#d8ccc0]/80">
+                  Basic routine, oil control, and daily consistency.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-[#f5a623]/10 bg-[#0f0d0b] p-4">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-[#f5a623]/65">
+                  Hair
+                </p>
+
+                <p className="mt-1 text-sm text-[#d8ccc0]/80">
+                  Style direction based on your face and hair type.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-[#f5a623]/10 bg-[#0f0d0b] p-4">
+                <p className="text-[11px] uppercase tracking-[0.25em] text-[#f5a623]/65">
+                  Daily plan
+                </p>
+
+                <p className="mt-1 text-sm text-[#d8ccc0]/80">
+                  Simple actions you can actually follow every day.
+                </p>
+              </div>
+
             </div>
           </div>
-        </div>
-      </section>
+
+        </section>
+      </div>
     </main>
   );
 }
