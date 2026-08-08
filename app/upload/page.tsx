@@ -43,8 +43,8 @@ export default function UploadPage() {
   };
 
   return (
-    <main>
-      <div>
+    <main className="min-h-screen w-full overflow-x-hidden px-4 py-6">
+      <div className="mx-auto flex min-h-[calc(100vh-3rem)] w-full max-w-md flex-col">
         <button
           onClick={() => router.back()}
           className="mb-8 w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10"
@@ -57,7 +57,7 @@ export default function UploadPage() {
             Step 1 of 3
           </p>
 
-          <h1 className="mt-3 text-4xl font-semibold tracking-tight">
+          <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             Upload your selfie
           </h1>
 
@@ -67,12 +67,12 @@ export default function UploadPage() {
           </p>
         </div>
 
-        <label className="mt-10 flex cursor-pointer flex-1 flex-col items-center justify-center rounded-3xl border border-dashed border-white/15 bg-white/5 p-8 text-center transition hover:border-white/30">
-          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5">
+        <label className="mt-10 flex min-h-[300px] w-full cursor-pointer flex-col items-center justify-center rounded-3xl border border-dashed border-white/15 bg-white/5 p-6 text-center transition hover:border-white/30">
+          <div className="mb-6 flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5">
             <span className="text-2xl text-white/40">+</span>
           </div>
 
-          <h2 className="text-xl font-semibold">
+          <h2 className="max-w-full break-words text-xl font-semibold">
             {file ? file.name : "Tap to choose a selfie"}
           </h2>
 
@@ -88,30 +88,33 @@ export default function UploadPage() {
           />
         </label>
 
-        <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div className="mt-6 w-full rounded-2xl border border-white/10 bg-white/5 p-4">
           <p className="text-sm text-white/80">
             ✓ Face clearly visible
           </p>
+
           <p className="mt-2 text-sm text-white/80">
             ✓ Remove sunglasses or masks
           </p>
+
           <p className="mt-2 text-sm text-white/80">
             ✓ Use natural lighting if possible
           </p>
         </div>
 
-        <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+        <div className="mt-5 w-full rounded-2xl border border-white/10 bg-white/[0.03] p-4">
           <p className="text-xs leading-5 text-white/60">
             Your photo is securely stored and used to generate your
             personalized HeGlows analysis.
           </p>
+
           <p className="mt-2 text-xs leading-5 text-white/40">
             We don't sell or publicly display your photo.
           </p>
         </div>
 
         {status && (
-          <p className="mt-5 text-center text-sm text-white/70">
+          <p className="mt-5 break-words text-center text-sm text-white/70">
             {status}
           </p>
         )}
@@ -119,7 +122,7 @@ export default function UploadPage() {
         <button
           onClick={uploadSelfie}
           disabled={uploading}
-          className="mt-6 h-14 rounded-2xl bg-white text-base font-semibold text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-6 h-14 w-full rounded-2xl bg-white px-4 text-base font-semibold text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {uploading ? "Uploading..." : "Continue"}
         </button>
