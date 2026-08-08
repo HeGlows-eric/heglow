@@ -43,9 +43,8 @@ export default function UploadPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="mx-auto flex min-h-screen w-full max-w-md flex-col px-5 py-6">
-
+    <main>
+      <div>
         <button
           onClick={() => router.back()}
           className="mb-8 w-fit rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:bg-white/10"
@@ -63,15 +62,14 @@ export default function UploadPage() {
           </h1>
 
           <p className="mt-3 text-sm leading-6 text-white/60">
-            Use a clear front-facing photo in good lighting. This helps generate
-            a more accurate glow-up report.
+            Use a clear front-facing photo in good lighting. This helps
+            generate a more accurate glow-up report.
           </p>
         </div>
 
         <label className="mt-10 flex cursor-pointer flex-1 flex-col items-center justify-center rounded-3xl border border-dashed border-white/15 bg-white/5 p-8 text-center transition hover:border-white/30">
-
-          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-white/10 text-4xl">
-            📷
+          <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-white/10 bg-white/5">
+            <span className="text-2xl text-white/40">+</span>
           </div>
 
           <h2 className="text-xl font-semibold">
@@ -102,6 +100,16 @@ export default function UploadPage() {
           </p>
         </div>
 
+        <div className="mt-5 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <p className="text-xs leading-5 text-white/60">
+            Your photo is securely stored and used to generate your
+            personalized HeGlows analysis.
+          </p>
+          <p className="mt-2 text-xs leading-5 text-white/40">
+            We don't sell or publicly display your photo.
+          </p>
+        </div>
+
         {status && (
           <p className="mt-5 text-center text-sm text-white/70">
             {status}
@@ -115,7 +123,6 @@ export default function UploadPage() {
         >
           {uploading ? "Uploading..." : "Continue"}
         </button>
-
       </div>
     </main>
   );
