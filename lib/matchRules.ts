@@ -1,25 +1,25 @@
 import { adviceLibrary } from "./adviceLibrary";
 
-export function matchRules(answers: any) {
+type Answers = {
+  skinType?: string;
+  hairType?: string;
+  bodyType?: string;
+  goal?: string;
+};
+
+export function matchRules(answers: Answers) {
+  const skinKey = answers.skinType?.toLowerCase() as keyof typeof adviceLibrary.skin;
+  const hairKey = answers.hairType?.toLowerCase() as keyof typeof adviceLibrary.hair;
+  const bodyKey = answers.bodyType?.toLowerCase() as keyof typeof adviceLibrary.body;
+  const goalKey = answers.goal as keyof typeof adviceLibrary.goals;
+
   return {
-    skin:
-      adviceLibrary.skin[
-        answers.skinType as keyof typeof adviceLibrary.skin
-      ] || [],
+    skin: adviceLibrary.skin[skinKey] || [],
 
-    hair:
-      adviceLibrary.hair[
-        answers.hairType as keyof typeof adviceLibrary.hair
-      ] || [],
+    hair: adviceLibrary.hair[hairKey] || [],
 
-    body:
-      adviceLibrary.body[
-        answers.bodyType as keyof typeof adviceLibrary.body
-      ] || [],
+    body: adviceLibrary.body[bodyKey] || [],
 
-    goals:
-      adviceLibrary.goals[
-        answers.goal as keyof typeof adviceLibrary.goals
-      ] || [],
+    goals: adviceLibrary.goals[goalKey] || [],
   };
 }

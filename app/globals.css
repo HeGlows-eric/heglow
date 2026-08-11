@@ -3,6 +3,7 @@
 :root {
   --background: #0f0d0b;
   --foreground: #f6efe8;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -18,16 +19,28 @@
 
 html {
   scroll-behavior: smooth;
+  background: #0f0d0b;
+  color-scheme: only dark;
 }
 
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top, rgba(255, 175, 73, 0.12), transparent 32%),
-    linear-gradient(180deg, #17120e 0%, #0f0d0b 45%, #090807 100%);
+    radial-gradient(
+      circle at top,
+      rgba(255, 175, 73, 0.16),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #17120e 0%,
+      #0f0d0b 45%,
+      #090807 100%
+    );
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
+  color-scheme: only dark;
 }
 
 a {
@@ -42,7 +55,66 @@ select {
   font: inherit;
 }
 
+/*
+  Prevent the browser from replacing HeGlows' authored colors
+  when a device is using forced/dark color adjustments.
+*/
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  forced-color-adjust: none;
+}
+
+select,
+input,
+textarea {
+  color-scheme: dark;
+}
+
 ::selection {
   background: rgba(255, 176, 73, 0.35);
   color: #fff7ef;
+}
+
+/*
+  HeGlows amber CTA helper.
+  This can be added to any primary gold/orange button.
+*/
+.heglows-amber-button {
+  background: linear-gradient(
+    90deg,
+    #ffc15a 0%,
+    #f59b20 100%
+  ) !important;
+
+  color: #17100a !important;
+  border-color: transparent !important;
+
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  forced-color-adjust: none !important;
+
+  box-shadow: 0 10px 34px rgba(245, 166, 35, 0.28);
+}
+
+.heglows-amber-button:hover {
+  filter: brightness(1.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f0d0b;
+    --foreground: #f6efe8;
+    color-scheme: only dark;
+  }
+
+  html,
+  body {
+    background-color: #0f0d0b;
+    color: #f6efe8;
+  }
+
+  button {
+    forced-color-adjust: none;
+  }
 }
