@@ -70,11 +70,12 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   1. Overview
                 </h3>
+
                 <p>
                   HeGlows is an appearance-improvement service that provides
-                  personalized recommendations based on information you
-                  choose to provide, including questionnaire responses and
-                  an uploaded selfie.
+                  personalized recommendations based on information you choose
+                  to provide, including questionnaire responses and an uploaded
+                  selfie.
                 </p>
               </section>
 
@@ -82,16 +83,18 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   2. Information We Collect
                 </h3>
+
                 <p>
                   HeGlows may process information that you voluntarily provide
-                  when using the service. This may include your uploaded
-                  selfie, questionnaire responses, appearance-related
-                  preferences, goals, and other information required to
-                  generate your results.
+                  when using the service. This may include your uploaded selfie,
+                  questionnaire responses, appearance-related preferences,
+                  goals, and other information required to generate your
+                  results.
                 </p>
+
                 <p className="mt-2">
-                  HeGlows does not currently require you to create an account
-                  or provide an email address to use the core experience.
+                  HeGlows does not currently require you to create an account or
+                  provide an email address to use the core experience.
                 </p>
               </section>
 
@@ -99,22 +102,28 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   3. Selfie and Image Data
                 </h3>
+
                 <p>
-                  When you upload a selfie, the image is stored using
-                  Supabase Storage in order to provide the requested
-                  HeGlows experience and generate your results.
+                  When you upload a selfie, the image is stored using Supabase
+                  Storage as part of the HeGlows analysis experience.
                 </p>
+
+                <p className="mt-2">
+                  The current HeGlows MVP does not send uploaded selfies to an
+                  AI model or AI provider for analysis. The current personalized
+                  report is generated using information provided through the
+                  questionnaire.
+                </p>
+
                 <p className="mt-2">
                   Uploaded selfies are intended to be retained for no longer
-                  than 72 hours and are manually deleted within that period.
-                  Once an object is permanently deleted from Supabase
-                  Storage, it is no longer available through the storage
-                  service.
+                  than 72 hours and are automatically deleted within that
+                  period.
                 </p>
+
                 <p className="mt-2">
-                  Please do not upload photographs of another person unless
-                  you have the legal right and appropriate permission to do
-                  so.
+                  Please do not upload photographs of another person unless you
+                  have the legal right and appropriate permission to do so.
                 </p>
               </section>
 
@@ -122,6 +131,7 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   4. How We Use Information
                 </h3>
+
                 <p>
                   Information you provide may be used to operate HeGlows,
                   generate personalized results, maintain and improve the
@@ -134,11 +144,13 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   5. Analytics
                 </h3>
+
                 <p>
                   HeGlows uses Vercel Analytics to understand how visitors
-                  interact with the service, measure usage, identify
-                  performance issues, and improve the product.
+                  interact with the service, measure usage, identify performance
+                  issues, and improve the product.
                 </p>
+
                 <p className="mt-2">
                   Analytics and hosting infrastructure may process technical
                   information such as device, browser, usage, network,
@@ -151,11 +163,17 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   6. Third-Party Service Providers
                 </h3>
+
                 <p>
                   HeGlows relies on third-party infrastructure providers,
                   including Supabase for storage and Vercel for hosting and
                   analytics. These providers may process information as
                   necessary to provide their services.
+                </p>
+
+                <p className="mt-2">
+                  HeGlows does not currently send uploaded selfies to an AI
+                  provider.
                 </p>
               </section>
 
@@ -163,6 +181,7 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   7. Data Security
                 </h3>
+
                 <p>
                   We use reasonable technical and organizational measures
                   intended to protect information processed through HeGlows.
@@ -175,11 +194,16 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   8. Data Retention
                 </h3>
+
                 <p>
-                  Uploaded selfies are intended to be deleted within 72
-                  hours. Other information may be retained for as long as
-                  reasonably necessary to operate, maintain, secure, and
-                  improve the service, or as required by applicable law.
+                  Uploaded selfies are intended to be deleted within 72 hours.
+                </p>
+
+                <p className="mt-2">
+                  Questionnaire and results data may be retained for as long as
+                  reasonably necessary to provide, maintain, secure,
+                  troubleshoot, and improve the service, or as required by
+                  applicable law.
                 </p>
               </section>
 
@@ -187,12 +211,13 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   9. Your Choices and Requests
                 </h3>
+
                 <p>
                   If you have a privacy question or believe information
                   associated with your use of HeGlows requires correction or
                   deletion, contact us at{" "}
                   <span className="text-[#f5b544]">
-                    [YOUR HEGLOWS EMAIL]
+                    heglows.support@gmail.com
                   </span>
                   .
                 </p>
@@ -202,11 +227,12 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   10. Age Restrictions
                 </h3>
+
                 <p>
                   HeGlows is not intended for children. If you are below the
                   minimum age required to use online services in your
-                  jurisdiction, you should not use HeGlows without any
-                  consent required by applicable law.
+                  jurisdiction, you should not use HeGlows without any consent
+                  required by applicable law.
                 </p>
               </section>
 
@@ -214,12 +240,12 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   11. Changes to This Policy
                 </h3>
+
                 <p>
                   We may update this Privacy Policy from time to time. When
-                  material changes are made, we may update the date shown at
-                  the beginning of this policy. Your continued use of HeGlows
-                  after an update means that you acknowledge the updated
-                  policy.
+                  material changes are made, we may update the date shown at the
+                  beginning of this policy. Your continued use of HeGlows after
+                  an update means that you acknowledge the updated policy.
                 </p>
               </section>
 
@@ -227,11 +253,13 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   12. Contact
                 </h3>
+
                 <p>
                   For privacy-related questions or requests, contact:
                 </p>
+
                 <p className="mt-2 text-[#f5b544]">
-                  [YOUR HEGLOWS EMAIL]
+                  heglows.support@gmail.com
                 </p>
               </section>
             </div>
@@ -241,10 +269,11 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   1. Acceptance of These Terms
                 </h3>
+
                 <p>
                   By accessing or using HeGlows, you agree to these Terms of
-                  Service. If you do not agree with these Terms, you should
-                  not use the service.
+                  Service. If you do not agree with these Terms, you should not
+                  use the service.
                 </p>
               </section>
 
@@ -252,6 +281,7 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   2. What HeGlows Provides
                 </h3>
+
                 <p>
                   HeGlows provides personalized appearance-improvement
                   information and recommendations based on information
@@ -265,15 +295,20 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   3. Informational Purpose
                 </h3>
+
                 <p>
-                  HeGlows provides general informational and appearance-related
-                  guidance. Results and recommendations are not guarantees of
-                  a particular physical appearance, outcome, or improvement.
+                  HeGlows provides general informational and
+                  appearance-related guidance. Results and recommendations are
+                  not guarantees of a particular physical appearance, outcome,
+                  or improvement.
                 </p>
+
                 <p className="mt-2">
                   HeGlows is not a medical service and its recommendations
                   should not be treated as medical diagnosis, treatment, or
-                  professional medical advice.
+                  professional medical advice. HeGlows should not be relied on
+                  to diagnose or treat skin conditions or other health
+                  conditions.
                 </p>
               </section>
 
@@ -281,11 +316,19 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   4. User-Provided Information
                 </h3>
+
                 <p>
                   You are responsible for the accuracy and appropriateness of
                   information you provide to HeGlows. You should not submit
                   information that you do not have the right or permission to
                   submit.
+                </p>
+
+                <p className="mt-2">
+                  HeGlows currently does not require users to create accounts.
+                  You are responsible for keeping control of your browser,
+                  device, and any information associated with your use of the
+                  service.
                 </p>
               </section>
 
@@ -293,11 +336,18 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   5. Selfie Uploads
                 </h3>
+
                 <p>
                   You are responsible for ensuring that you have the necessary
                   rights and permissions for any image you upload. You should
                   not upload another person's image without appropriate
                   permission.
+                </p>
+
+                <p className="mt-2">
+                  Uploads must comply with the technical and usage restrictions
+                  displayed by HeGlows. You must not upload unlawful, malicious,
+                  or abusive content.
                 </p>
               </section>
 
@@ -305,22 +355,24 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   6. Acceptable Use
                 </h3>
+
                 <p>
-                  You agree not to misuse HeGlows, interfere with its
-                  operation, attempt to gain unauthorized access, upload
-                  malicious content, abuse the service, or use the service
-                  for unlawful purposes.
+                  You agree not to misuse HeGlows, interfere with its operation,
+                  attempt to gain unauthorized access, upload malicious content,
+                  abuse the service, circumvent reasonable usage or security
+                  controls, or use the service for unlawful purposes.
                 </p>
               </section>
 
               <section>
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
-                  7. Availability and Changes
+                  7. Service Availability and Changes
                 </h3>
+
                 <p>
-                  We may modify, suspend, or discontinue features of HeGlows
-                  at any time. We do not guarantee that the service will
-                  always be available, uninterrupted, secure, or error-free.
+                  We may modify, suspend, or discontinue features of HeGlows at
+                  any time. We do not guarantee that the service will always be
+                  available, uninterrupted, secure, accurate, or error-free.
                 </p>
               </section>
 
@@ -328,10 +380,13 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   8. Third-Party Services
                 </h3>
+
                 <p>
                   HeGlows uses third-party services and infrastructure,
-                  including Supabase and Vercel. The availability and operation
-                  of those services may affect HeGlows.
+                  including Supabase and Vercel for storage, hosting, and
+                  analytics. The availability and operation of those services
+                  may affect HeGlows. Your use of third-party services may also
+                  be subject to their own terms and policies.
                 </p>
               </section>
 
@@ -339,41 +394,87 @@ export default function LegalModal({
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
                   9. Intellectual Property
                 </h3>
+
                 <p>
                   The HeGlows name, branding, software, interface, original
-                  content, and other materials provided by HeGlows are owned
-                  by or licensed to HeGlows unless otherwise stated.
+                  content, and other materials provided by HeGlows are owned by
+                  or licensed to HeGlows unless otherwise stated.
+                </p>
+
+                <p className="mt-2">
+                  You retain your rights in content that you submit to
+                  HeGlows, subject to the rights needed for HeGlows to operate
+                  the service as described in the Privacy Policy.
                 </p>
               </section>
 
               <section>
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
-                  10. Limitation of Liability
+                  10. Your Responsibility for Recommendations
                 </h3>
+
+                <p>
+                  You are responsible for how you use information and
+                  recommendations provided by HeGlows. Consider your own
+                  circumstances and seek qualified professional advice when
+                  appropriate before making decisions involving health,
+                  skincare, fitness, or other areas where professional guidance
+                  may be necessary.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                  11. Limitation of Liability
+                </h3>
+
                 <p>
                   To the maximum extent permitted by applicable law, HeGlows
                   will not be responsible for indirect, incidental,
                   consequential, special, or similar losses arising from your
                   use of, or inability to use, the service.
                 </p>
-              </section>
 
-              <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
-                  11. Termination
-                </h3>
-                <p>
-                  We may restrict or terminate access to HeGlows where
-                  reasonably necessary, including where a user violates these
-                  Terms, abuses the service, or creates security or legal
-                  risks.
+                <p className="mt-2">
+                  Nothing in these Terms is intended to exclude or limit
+                  liability that cannot legally be excluded or limited under
+                  applicable law.
                 </p>
               </section>
 
               <section>
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
-                  12. Changes to These Terms
+                  12. Termination or Restriction
                 </h3>
+
+                <p>
+                  We may restrict or terminate access to HeGlows where
+                  reasonably necessary, including where a user violates these
+                  Terms, abuses the service, attempts to compromise security,
+                  or creates legal or operational risks.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                  13. Governing Law and Jurisdiction
+                </h3>
+
+                <p>
+                  These Terms are intended to be governed by the laws
+                  applicable in India, subject to any mandatory consumer or
+                  other rights that cannot be waived under applicable law.
+                  Subject to those mandatory rights, disputes arising from or
+                  relating to these Terms or the use of HeGlows will be subject
+                  to the jurisdiction of the courts applicable in India.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                  14. Changes to These Terms
+                </h3>
+
                 <p>
                   We may update these Terms from time to time. Updated Terms
                   will be reflected by changing the date shown in this
@@ -384,13 +485,15 @@ export default function LegalModal({
 
               <section>
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
-                  13. Contact
+                  15. Contact
                 </h3>
+
                 <p>
                   Questions about these Terms can be sent to:
                 </p>
+
                 <p className="mt-2 text-[#f5b544]">
-                  [YOUR HEGLOWS EMAIL]
+                  heglows.support@gmail.com
                 </p>
               </section>
             </div>

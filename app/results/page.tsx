@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -176,7 +177,7 @@ export default function ResultsPage() {
 
         <section className="mt-10">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f5a623]/70">
-            Step 3 of 3
+            Step 4 of 4
           </p>
 
           <h1 className="mt-3 text-4xl font-semibold leading-tight tracking-[-0.04em] text-[#fff8f0]">

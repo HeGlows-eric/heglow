@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -132,7 +133,7 @@ export default function QuestionnairePage() {
       },
     });
 
-    router.push("/results");
+    router.push("/loading");
   };
 
   const selectClass =
@@ -141,7 +142,6 @@ export default function QuestionnairePage() {
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-[#0f0d0b] px-4 py-6 text-[#f6efe8]">
       <div className="mx-auto flex min-h-[calc(100vh-3rem)] w-full max-w-md flex-col">
-
         <button
           onClick={() => router.back()}
           className="mb-6 w-fit rounded-full border border-[#f5a623]/15 bg-[#17130f] px-4 py-2 text-sm text-[#d8ccc0]/80 transition hover:border-[#f5a623]/30 hover:bg-[#211a14]"
@@ -151,7 +151,7 @@ export default function QuestionnairePage() {
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f5a623]/75">
-            Step 2 of 3
+            Step 2 of 4
           </p>
 
           <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#fff8f0] sm:text-4xl">
@@ -166,7 +166,6 @@ export default function QuestionnairePage() {
 
         <form onSubmit={saveResponses} className="mt-8 flex flex-1 flex-col">
           <div className="space-y-4">
-
             {/* Hair */}
             <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
               <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
@@ -209,7 +208,8 @@ export default function QuestionnairePage() {
               </select>
 
               <p className="mt-2 text-[11px] leading-5 text-[#d8ccc0]/40">
-                This helps us recommend hairstyles that complement your facial proportions.
+                This helps us recommend hairstyles that complement your facial
+                proportions.
               </p>
             </div>
 
@@ -347,11 +347,12 @@ export default function QuestionnairePage() {
             disabled={loading}
             className="mt-6 h-14 w-full rounded-2xl bg-gradient-to-r from-[#ffc15a] to-[#f59b20] px-4 text-base font-semibold text-[#17100a] shadow-[0_8px_30px_rgba(245,166,35,0.2)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {loading ? "Building your plan..." : "Build my glow-up plan →"}
+            {loading ? "Saving your answers..." : "Build my glow-up plan →"}
           </button>
 
           <p className="mt-3 pb-4 text-center text-[11px] leading-5 text-[#d8ccc0]/40">
-            One more step after this. Then you'll see your personalized roadmap.
+            One more step after this. Then you'll see your personalized
+            roadmap.
           </p>
         </form>
       </div>
