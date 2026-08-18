@@ -1,9 +1,18 @@
+
 "use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import { patchFlow } from "@/lib/flow";
+
+const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
+const ALLOWED_FILE_TYPES = [
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+];
 
 export default function UploadPage() {
   const router = useRouter();
@@ -12,20 +21,57 @@ export default function UploadPage() {
   const [status, setStatus] = useState("");
   const [uploading, setUploading] = useState(false);
 
+  const handleFileChange = (selectedFile: File | null) => {
+    setStatus("");
+
+    if (!selectedFile) {
+      setFile(null);
+      return;
+    }
+
+    if (!ALLOWED_FILE_TYPES.includes(selectedFile.type)) {
+      setFile(null);
+      setStatus("Please choose a JPG, PNG, or WebP image.");
+      return;
+    }
+
+    if (selectedFile.size > MAX_FILE_SIZE) {
+      setFile(null);
+      setStatus("That image is too large. The maximum file size is 10 MB.");
+      return;
+    }
+
+    setFile(selectedFile);
+  };
+
   const uploadSelfie = async () => {
     if (!file) {
       setStatus("Please choose a selfie.");
       return;
     }
 
+    if (!ALLOWED_FILE_TYPES.includes(file.type)) {
+      setStatus("Please choose a JPG, PNG, or WebP image.");
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+      setStatus("That image is too large. The maximum file size is 10 MB.");
+      return;
+    }
+
     setUploading(true);
     setStatus("Uploading your selfie...");
 
-    const fileName = `${Date.now()}-${file.name}`;
+    const fileExtension = file.name.split(".").pop()?.toLowerCase() || "jpg";
+    const fileName = `${Date.now()}-${crypto.randomUUID()}.${fileExtension}`;
 
     const { error } = await supabase.storage
       .from("Selfies")
-      .upload(fileName, file);
+      .upload(fileName, file, {
+        upsert: false,
+        contentType: file.type,
+      });
 
     if (error) {
       setUploading(false);
@@ -33,9 +79,10 @@ export default function UploadPage() {
       return;
     }
 
-    patchFlow({
-      uploadedFileName: fileName,
-    });
+   patchFlow({
+  uploadedFileName: fileName,
+  uploadedAt: Date.now(),
+});
 
     setStatus("Upload successful!");
 
@@ -81,14 +128,16 @@ export default function UploadPage() {
           </h2>
 
           <p className="mt-3 text-sm text-[#d8ccc0]/50">
-            Clear front-facing photo • JPG or PNG
+            Clear front-facing photo • JPG, PNG, or WebP • Max 10 MB
           </p>
 
           <input
             type="file"
-            accept="image/*"
+            accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
             className="hidden"
-            onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+            onChange={(e) =>
+              handleFileChange(e.target.files?.[0] ?? null)
+            }
           />
         </label>
 
@@ -126,8 +175,14 @@ export default function UploadPage() {
           </p>
 
           <p className="mt-2 text-xs leading-5 text-[#d8ccc0]/55">
-            Your selfie is stored with your HeGlows session and is not publicly
-            displayed or sold.
+            Your selfie is used for your HeGlows experience, stored securely
+            in our storage system, and is not publicly displayed or sold.
+            Uploaded selfies are intended to be deleted within 72 hours.
+          </p>
+
+          <p className="mt-2 text-xs leading-5 text-[#d8ccc0]/45">
+            By continuing, you confirm that you have the right to upload this
+            image and agree to our Privacy Policy and Terms of Service.
           </p>
         </div>
 

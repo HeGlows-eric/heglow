@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -397,18 +398,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Footer */}
-        <footer className="flex items-center justify-between border-t border-[#f5a623]/10 py-4 text-sm text-[#d8ccc0]/55">
-          <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#f5a623]/20 bg-[#f5a623]/10 text-[9px] font-bold tracking-[-0.08em] text-[#fff8f0]">
-              HG
-            </div>
-
-            <span>HeGlows</span>
-          </div>
-
-          <p>© 2026 HeGlows</p>
-        </footer>
+        {/* Legal Footer */}
+        <Footer />
       </div>
     </main>
   );

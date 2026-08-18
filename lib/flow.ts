@@ -1,5 +1,6 @@
 export type FlowData = {
   uploadedFileName?: string;
+  uploadedAt?: number;
   answers?: Record<string, string>;
 };
 
@@ -23,6 +24,7 @@ export function writeFlow(data: FlowData) {
 
 export function patchFlow(patch: Partial<FlowData>) {
   const current = readFlow();
+
   const next = {
     ...current,
     ...patch,
