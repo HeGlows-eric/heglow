@@ -1,10 +1,15 @@
 import { matchRules } from "./matchRules";
 import { getHairstyle } from "./hairstyleLibrary";
 import { getRecommendedProducts } from "./productLibrary";
+import {
+  getBaldRecommendations,
+  getBeardRecommendations,
+} from "./groomingLibrary";
 
 type Answers = {
   skinType?: string;
   hairType?: string;
+  beardStyle?: string;
   faceShape?: string;
   bodyType?: string;
   goal?: string;
@@ -17,6 +22,7 @@ function calculateGlowScore(answers: Answers) {
   let score = 6.5;
 
   if (answers.hairType) score += 0.2;
+  if (answers.beardStyle) score += 0.1;
   if (answers.faceShape) score += 0.3;
   if (answers.skinType) score += 0.2;
   if (answers.skinConcern) score += 0.1;
@@ -46,9 +52,22 @@ function getScoreMessage(score: number) {
 export function buildReport(answers: Answers) {
   const matched = matchRules(answers);
 
+  const isBald = answers.hairType?.toLowerCase() === "bald";
+
+  const baldRecommendations = isBald
+    ? getBaldRecommendations()
+    : [];
+
+  const beardRecommendations = getBeardRecommendations(
+    answers.beardStyle,
+    answers.faceShape
+  );
+
   const allAdvice = [
     ...matched.skin,
     ...matched.hair,
+    ...baldRecommendations,
+    ...beardRecommendations,
     ...matched.body,
     ...matched.goals,
   ];
@@ -68,36 +87,62 @@ export function buildReport(answers: Answers) {
 
   const topImprovements: string[] = [];
 
-  if (answers.faceShape && answers.hairType) {
-    topImprovements.push("Use a hairstyle matched to your face shape");
+  if (isBald) {
+    topImprovements.push(
+      "Keep your scalp clean, moisturized, and protected from the sun"
+    );
+  } else if (answers.faceShape && answers.hairType) {
+    topImprovements.push(
+      "Use a hairstyle matched to your face shape"
+    );
+  }
+
+  if (answers.beardStyle) {
+    topImprovements.push(
+      "Keep your facial hair shape and grooming consistent"
+    );
   }
 
   if (answers.skinType) {
-    topImprovements.push("Build a consistent skincare routine");
+    topImprovements.push(
+      "Build a consistent skincare routine"
+    );
   }
 
   if (answers.bodyType) {
-    topImprovements.push("Improve body composition and posture");
+    topImprovements.push(
+      "Improve body composition and posture"
+    );
   }
 
   if (answers.goal === "improveStyle") {
-    topImprovements.push("Upgrade fit and wardrobe basics");
+    topImprovements.push(
+      "Upgrade fit and wardrobe basics"
+    );
   }
 
   if (answers.goal === "clearSkin") {
-    topImprovements.push("Stay consistent with your skin routine");
+    topImprovements.push(
+      "Stay consistent with your skin routine"
+    );
   }
 
   if (answers.goal === "buildConfidence") {
-    topImprovements.push("Build confidence through visible habits");
+    topImprovements.push(
+      "Build confidence through visible habits"
+    );
   }
 
   if (answers.goal === "improveFitness") {
-    topImprovements.push("Follow a consistent strength and movement routine");
+    topImprovements.push(
+      "Follow a consistent strength and movement routine"
+    );
   }
 
   if (answers.goal === "glowUp") {
-    topImprovements.push("Focus on the highest-impact changes first");
+    topImprovements.push(
+      "Focus on the highest-impact changes first"
+    );
   }
 
   if (topImprovements.length < 3) {
@@ -113,12 +158,17 @@ export function buildReport(answers: Answers) {
 
     hairstyle,
 
+    beardRecommendations,
+
     topImprovements: topImprovements.slice(0, 3),
 
     products,
 
     skinRecommendations: matched.skin,
-    hairRecommendations: matched.hair,
+    hairRecommendations: [
+      ...matched.hair,
+      ...baldRecommendations,
+    ],
     bodyRecommendations: matched.body,
     goalRecommendations: matched.goals,
 

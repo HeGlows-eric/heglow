@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -6,7 +5,23 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import { patchFlow } from "@/lib/flow";
 
-const hairTypes = ["Straight", "Wavy", "Curly", "Coily"];
+const hairTypes = [
+  "Straight",
+  "Wavy",
+  "Curly",
+  "Coily",
+  "Bald",
+];
+
+const beardStyles = [
+  "Clean Shaven",
+  "Stubble",
+  "Short Beard",
+  "Full Beard",
+  "Goatee",
+  "Mustache Only",
+  "Long Beard",
+];
 
 const faceShapes = [
   "Oval",
@@ -68,6 +83,7 @@ export default function QuestionnairePage() {
   const router = useRouter();
 
   const [hairType, setHairType] = useState("");
+  const [beardStyle, setBeardStyle] = useState("");
   const [faceShape, setFaceShape] = useState("");
   const [skinType, setSkinType] = useState("");
   const [skinConcern, setSkinConcern] = useState("");
@@ -84,6 +100,7 @@ export default function QuestionnairePage() {
 
     if (
       !hairType ||
+      !beardStyle ||
       !faceShape ||
       !skinType ||
       !skinConcern ||
@@ -104,6 +121,7 @@ export default function QuestionnairePage() {
       .insert([
         {
           hair_type: hairType,
+          beard_style: beardStyle,
           face_shape: faceShape,
           skin_type: skinType,
           skin_concern: skinConcern,
@@ -123,6 +141,7 @@ export default function QuestionnairePage() {
     patchFlow({
       answers: {
         hairType,
+        beardStyle,
         faceShape,
         skinType,
         skinConcern,
@@ -166,6 +185,7 @@ export default function QuestionnairePage() {
 
         <form onSubmit={saveResponses} className="mt-8 flex flex-1 flex-col">
           <div className="space-y-4">
+
             {/* Hair */}
             <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
               <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
@@ -185,6 +205,32 @@ export default function QuestionnairePage() {
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* Facial Hair */}
+            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
+              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+                What's your facial hair style?
+              </label>
+
+              <select
+                className={selectClass}
+                value={beardStyle}
+                onChange={(e) => setBeardStyle(e.target.value)}
+              >
+                <option value="">Select facial hair style</option>
+
+                {beardStyles.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+
+              <p className="mt-2 text-[11px] leading-5 text-[#d8ccc0]/40">
+                This helps us personalize your grooming and facial-hair
+                recommendations.
+              </p>
             </div>
 
             {/* Face shape */}

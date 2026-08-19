@@ -83,6 +83,7 @@ export default function ResultsPage() {
 
   const report = buildReport({
     hairType: answers.hairType?.toLowerCase(),
+    beardStyle: answers.beardStyle?.toLowerCase(),
     faceShape: answers.faceShape?.toLowerCase(),
     skinType: answers.skinType?.toLowerCase(),
     skinConcern: answers.skinConcern,
@@ -112,10 +113,14 @@ export default function ResultsPage() {
         ? "You have a solid foundation. A few focused changes can make a visible difference."
         : "You have plenty of room to improve, which means plenty of upside.";
 
+  const isBald = answers.hairType === "Bald";
+
   const fallbackImprovements = [
-    "Build a consistent skincare routine",
-    "Choose a hairstyle that complements your face shape",
+    isBald
+      ? "Keep your scalp clean, moisturized, and protected from the sun"
+      : "Choose a hairstyle that complements your face shape",
     "Improve your overall presentation and daily habits",
+    "Build a consistent skincare routine",
   ];
 
   const improvements =
@@ -126,10 +131,13 @@ export default function ResultsPage() {
   const products = report.products ?? [];
 
   const hairstyle = report.hairstyle ?? {
-    name: "Your recommended hairstyle",
-    description:
-      "Complete your face-shape profile to unlock a more specific hairstyle recommendation.",
+    name: isBald ? "Own the Bald Look" : "Your recommended hairstyle",
+    description: isBald
+      ? "Focus on scalp care, clean grooming, and facial-hair styling rather than a conventional haircut."
+      : "Complete your face-shape profile to unlock a more specific hairstyle recommendation.",
   };
+
+  const beardRecommendations = report.beardRecommendations ?? [];
 
   return (
     <main className="relative min-h-screen w-full overflow-x-hidden bg-[#0f0d0b] px-4 py-6 text-[#f6efe8]">
@@ -234,13 +242,13 @@ export default function ResultsPage() {
         </section>
 
         {/* ============================================================
-            BEST HAIRSTYLE
+            HAIRSTYLE / BALD DIRECTION
             ============================================================ */}
 
         <section className="mt-5 rounded-[2rem] border border-[#f5a623]/10 bg-[#17130f] p-5">
           <div className="flex items-center justify-between">
             <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#d8ccc0]/45">
-              Best hairstyle
+              {isBald ? "Best hair direction" : "Best hairstyle"}
             </p>
 
             <span className="rounded-full border border-[#f5a623]/15 bg-[#211a14] px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#f5a623]/70">
@@ -259,7 +267,7 @@ export default function ResultsPage() {
           <div className="mt-4 flex flex-wrap gap-2">
             {answers.hairType && (
               <span className="rounded-full bg-[#211a14] px-3 py-1.5 text-[11px] text-[#d8ccc0]/65">
-                {answers.hairType} hair
+                {isBald ? "Bald" : `${answers.hairType} hair`}
               </span>
             )}
 
@@ -269,6 +277,49 @@ export default function ResultsPage() {
               </span>
             )}
           </div>
+        </section>
+
+        {/* ============================================================
+            FACIAL HAIR
+            ============================================================ */}
+
+        <section className="mt-5 rounded-[2rem] border border-[#f5a623]/10 bg-[#17130f] p-5">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.25em] text-[#d8ccc0]/45">
+              Facial hair
+            </p>
+
+            <span className="rounded-full border border-[#f5a623]/15 bg-[#211a14] px-3 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#f5a623]/70">
+              Personalized
+            </span>
+          </div>
+
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#fff8f0]">
+            {answers.beardStyle || "Your facial hair profile"}
+          </h2>
+
+          {beardRecommendations.length > 0 ? (
+            <ul className="mt-4 space-y-3">
+              {beardRecommendations.map(
+                (item: string, index: number) => (
+                  <li
+                    key={`beard-${index}`}
+                    className="flex items-start gap-3"
+                  >
+                    <span className="mt-1 text-[#f5a623]">•</span>
+
+                    <span className="text-sm leading-6 text-[#d8ccc0]/70">
+                      {item}
+                    </span>
+                  </li>
+                )
+              )}
+            </ul>
+          ) : (
+            <p className="mt-2 text-sm leading-6 text-[#d8ccc0]/60">
+              Your facial-hair profile will guide grooming recommendations.
+            </p>
+          )}
         </section>
 
         {/* ============================================================
@@ -417,8 +468,12 @@ export default function ResultsPage() {
                 items: report.skinRecommendations,
               },
               {
-                title: "Hair",
+                title: isBald ? "Scalp & Hair" : "Hair",
                 items: report.hairRecommendations,
+              },
+              {
+                title: "Beard & Grooming",
+                items: report.beardRecommendations,
               },
               {
                 title: "Body",
@@ -446,20 +501,22 @@ export default function ResultsPage() {
                 </summary>
 
                 <div className="border-t border-[#f5a623]/10 px-5 pb-5 pt-4">
-                  {section.items.length > 0 ? (
+                  {section.items?.length > 0 ? (
                     <ul className="space-y-3">
-                      {section.items.map((item: string, index: number) => (
-                        <li
-                          key={`${section.title}-${index}`}
-                          className="flex items-start gap-3"
-                        >
-                          <span className="mt-1 text-[#f5a623]">•</span>
+                      {section.items.map(
+                        (item: string, index: number) => (
+                          <li
+                            key={`${section.title}-${index}`}
+                            className="flex items-start gap-3"
+                          >
+                            <span className="mt-1 text-[#f5a623]">•</span>
 
-                          <span className="text-sm leading-6 text-[#d8ccc0]/70">
-                            {item}
-                          </span>
-                        </li>
-                      ))}
+                            <span className="text-sm leading-6 text-[#d8ccc0]/70">
+                              {item}
+                            </span>
+                          </li>
+                        )
+                      )}
                     </ul>
                   ) : (
                     <p className="text-sm text-[#d8ccc0]/55">
