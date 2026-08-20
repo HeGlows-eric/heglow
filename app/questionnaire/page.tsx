@@ -397,7 +397,7 @@ export default function QuestionnairePage() {
           </button>
 
           <p className="mt-3 pb-4 text-center text-[11px] leading-5 text-[#d8ccc0]/40">
-            One more step after this. Then you'll see your personalized
+           Next: we'll build your personalized roadmap.
             roadmap.
           </p>
         </form>

@@ -103,7 +103,7 @@ export default function UploadPage() {
         {/* Header */}
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f5a623]/75">
-            Step 1 of 3
+            Step 1 of 4
           </p>
 
           <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[#fff8f0] sm:text-4xl">
