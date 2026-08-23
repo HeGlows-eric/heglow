@@ -50,7 +50,7 @@ export default function LegalModal({
 
         <div className="pr-10">
           <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f5a623]/80">
-            HeGlows
+            HeGlow
           </p>
 
           <h2
@@ -72,7 +72,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  HeGlows is an appearance-improvement service that provides
+                  HeGlow is an appearance-improvement service that provides
                   personalized recommendations based on information you choose
                   to provide, including questionnaire responses and an uploaded
                   selfie.
@@ -85,7 +85,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  HeGlows may process information that you voluntarily provide
+                  HeGlow may process information that you voluntarily provide
                   when using the service. This may include your uploaded selfie,
                   questionnaire responses, appearance-related preferences,
                   goals, and other information required to generate your
@@ -93,7 +93,7 @@ export default function LegalModal({
                 </p>
 
                 <p className="mt-2">
-                  HeGlows does not currently require you to create an account or
+                  HeGlow does not currently require you to create an account or
                   provide an email address to use the core experience.
                 </p>
               </section>
@@ -105,11 +105,11 @@ export default function LegalModal({
 
                 <p>
                   When you upload a selfie, the image is stored using Supabase
-                  Storage as part of the HeGlows analysis experience.
+                  Storage as part of the HeGlow analysis experience.
                 </p>
 
                 <p className="mt-2">
-                  The current HeGlows MVP does not send uploaded selfies to an
+                  The current HeGlow MVP does not send uploaded selfies to an
                   AI model or AI provider for analysis. The current personalized
                   report is generated using information provided through the
                   questionnaire.
@@ -133,7 +133,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  Information you provide may be used to operate HeGlows,
+                  Information you provide may be used to operate HeGlow,
                   generate personalized results, maintain and improve the
                   service, troubleshoot technical problems, and protect the
                   security and integrity of the service.
@@ -146,7 +146,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  HeGlows uses Vercel Analytics to understand how visitors
+                  HeGlow uses Vercel Analytics to understand how visitors
                   interact with the service, measure usage, identify performance
                   issues, and improve the product.
                 </p>
@@ -165,14 +165,14 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  HeGlows relies on third-party infrastructure providers,
+                  HeGlow relies on third-party infrastructure providers,
                   including Supabase for storage and Vercel for hosting and
                   analytics. These providers may process information as
                   necessary to provide their services.
                 </p>
 
                 <p className="mt-2">
-                  HeGlows does not currently send uploaded selfies to an AI
+                  HeGlow does not currently send uploaded selfies to an AI
                   provider.
                 </p>
               </section>
@@ -184,7 +184,7 @@ export default function LegalModal({
 
                 <p>
                   We use reasonable technical and organizational measures
-                  intended to protect information processed through HeGlows.
+                  intended to protect information processed through HeGlow.
                   However, no internet transmission or storage system can be
                   guaranteed to be completely secure.
                 </p>
@@ -214,7 +214,7 @@ export default function LegalModal({
 
                 <p>
                   If you have a privacy question or believe information
-                  associated with your use of HeGlows requires correction or
+                  associated with your use of HeGlow requires correction or
                   deletion, contact us at{" "}
                   <span className="text-[#f5b544]">
                     heglows.support@gmail.com
@@ -229,9 +229,9 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  HeGlows is not intended for children. If you are below the
+                  HeGlow is not intended for children. If you are below the
                   minimum age required to use online services in your
-                  jurisdiction, you should not use HeGlows without any consent
+                  jurisdiction, you should not use HeGlow without any consent
                   required by applicable law.
                 </p>
               </section>
@@ -244,7 +244,7 @@ export default function LegalModal({
                 <p>
                   We may update this Privacy Policy from time to time. When
                   material changes are made, we may update the date shown at the
-                  beginning of this policy. Your continued use of HeGlows after
+                  beginning of this policy. Your continued use of HeGlow after
                   an update means that you acknowledge the updated policy.
                 </p>
               </section>
@@ -271,7 +271,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  By accessing or using HeGlows, you agree to these Terms of
+                  By accessing or using HeGlow, you agree to these Terms of
                   Service. If you do not agree with these Terms, you should not
                   use the service.
                 </p>
@@ -279,11 +279,11 @@ export default function LegalModal({
 
               <section>
                 <h3 className="mb-2 font-semibold text-[#fff8f0]">
-                  2. What HeGlows Provides
+                  2. What HeGlow Provides
                 </h3>
 
                 <p>
-                  HeGlows provides personalized appearance-improvement
+                  HeGlow provides personalized appearance-improvement
                   information and recommendations based on information
                   submitted by the user. The service may provide guidance
                   relating to areas such as hair, skin, style, grooming,
@@ -297,16 +297,16 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  HeGlows provides general informational and
+                  HeGlow provides general informational and
                   appearance-related guidance. Results and recommendations are
                   not guarantees of a particular physical appearance, outcome,
                   or improvement.
                 </p>
 
                 <p className="mt-2">
-                  HeGlows is not a medical service and its recommendations
+                  HeGlow is not a medical service and its recommendations
                   should not be treated as medical diagnosis, treatment, or
-                  professional medical advice. HeGlows should not be relied on
+                  professional medical advice. HeGlow should not be relied on
                   to diagnose or treat skin conditions or other health
                   conditions.
                 </p>
@@ -319,13 +319,13 @@ export default function LegalModal({
 
                 <p>
                   You are responsible for the accuracy and appropriateness of
-                  information you provide to HeGlows. You should not submit
+                  information you provide to HeGlow. You should not submit
                   information that you do not have the right or permission to
                   submit.
                 </p>
 
                 <p className="mt-2">
-                  HeGlows currently does not require users to create accounts.
+                  HeGlow currently does not require users to create accounts.
                   You are responsible for keeping control of your browser,
                   device, and any information associated with your use of the
                   service.
@@ -346,7 +346,7 @@ export default function LegalModal({
 
                 <p className="mt-2">
                   Uploads must comply with the technical and usage restrictions
-                  displayed by HeGlows. You must not upload unlawful, malicious,
+                  displayed by HeGlow. You must not upload unlawful, malicious,
                   or abusive content.
                 </p>
               </section>
@@ -357,7 +357,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  You agree not to misuse HeGlows, interfere with its operation,
+                  You agree not to misuse HeGlow, interfere with its operation,
                   attempt to gain unauthorized access, upload malicious content,
                   abuse the service, circumvent reasonable usage or security
                   controls, or use the service for unlawful purposes.
@@ -370,7 +370,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  We may modify, suspend, or discontinue features of HeGlows at
+                  We may modify, suspend, or discontinue features of HeGlow at
                   any time. We do not guarantee that the service will always be
                   available, uninterrupted, secure, accurate, or error-free.
                 </p>
@@ -382,10 +382,10 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  HeGlows uses third-party services and infrastructure,
+                  HeGlow uses third-party services and infrastructure,
                   including Supabase and Vercel for storage, hosting, and
                   analytics. The availability and operation of those services
-                  may affect HeGlows. Your use of third-party services may also
+                  may affect HeGlow. Your use of third-party services may also
                   be subject to their own terms and policies.
                 </p>
               </section>
@@ -396,14 +396,14 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  The HeGlows name, branding, software, interface, original
-                  content, and other materials provided by HeGlows are owned by
-                  or licensed to HeGlows unless otherwise stated.
+                  The HeGlow name, branding, software, interface, original
+                  content, and other materials provided by HeGlow are owned by
+                  or licensed to HeGlow unless otherwise stated.
                 </p>
 
                 <p className="mt-2">
                   You retain your rights in content that you submit to
-                  HeGlows, subject to the rights needed for HeGlows to operate
+                  HeGlow, subject to the rights needed for HeGlow to operate
                   the service as described in the Privacy Policy.
                 </p>
               </section>
@@ -415,7 +415,7 @@ export default function LegalModal({
 
                 <p>
                   You are responsible for how you use information and
-                  recommendations provided by HeGlows. Consider your own
+                  recommendations provided by HeGlow. Consider your own
                   circumstances and seek qualified professional advice when
                   appropriate before making decisions involving health,
                   skincare, fitness, or other areas where professional guidance
@@ -429,7 +429,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  To the maximum extent permitted by applicable law, HeGlows
+                  To the maximum extent permitted by applicable law, HeGlow
                   will not be responsible for indirect, incidental,
                   consequential, special, or similar losses arising from your
                   use of, or inability to use, the service.
@@ -448,7 +448,7 @@ export default function LegalModal({
                 </h3>
 
                 <p>
-                  We may restrict or terminate access to HeGlows where
+                  We may restrict or terminate access to HeGlow where
                   reasonably necessary, including where a user violates these
                   Terms, abuses the service, attempts to compromise security,
                   or creates legal or operational risks.
@@ -465,7 +465,7 @@ export default function LegalModal({
                   applicable in India, subject to any mandatory consumer or
                   other rights that cannot be waived under applicable law.
                   Subject to those mandatory rights, disputes arising from or
-                  relating to these Terms or the use of HeGlows will be subject
+                  relating to these Terms or the use of HeGlow will be subject
                   to the jurisdiction of the courts applicable in India.
                 </p>
               </section>
@@ -478,7 +478,7 @@ export default function LegalModal({
                 <p>
                   We may update these Terms from time to time. Updated Terms
                   will be reflected by changing the date shown in this
-                  document. Continued use of HeGlows after changes means you
+                  document. Continued use of HeGlow after changes means you
                   accept the updated Terms.
                 </p>
               </section>

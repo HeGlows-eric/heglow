@@ -56,7 +56,7 @@ select {
 }
 
 /*
-  Prevent the browser from replacing HeGlows' authored colors
+  Prevent the browser from replacing HeGlow's authored colors
   when a device is using forced/dark color adjustments.
 */
 button {
@@ -77,10 +77,10 @@ textarea {
 }
 
 /*
-  HeGlows amber CTA helper.
+  HeGlow amber CTA helper.
   This can be added to any primary gold/orange button.
 */
-.heglows-amber-button {
+.heglow-amber-button {
   background: linear-gradient(
     90deg,
     #ffc15a 0%,
@@ -97,7 +97,7 @@ textarea {
   box-shadow: 0 10px 34px rgba(245, 166, 35, 0.28);
 }
 
-.heglows-amber-button:hover {
+.heglow-amber-button:hover {
   filter: brightness(1.05);
 }
 

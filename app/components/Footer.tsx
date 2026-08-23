@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
 
             <span className="text-sm text-[#d8ccc0]/55">
-              HeGlows
+              HeGlow
             </span>
           </div>
 
@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-3 text-[10px] text-[#d8ccc0]/35">
-          © 2026 HeGlows
+          © 2026 HeGlow
         </p>
       </footer>
 

@@ -18,7 +18,7 @@ export default function Home() {
             </div>
 
             <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#f6efe8]/55">
-              HeGlows
+              HeGlow
             </p>
           </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
             </h1>
 
             <p className="mt-4 max-w-sm text-sm leading-6 text-[#d8ccc0]/76">
-              HeGlows is a personalized appearance improvement system for men.
+              HeGlow is a personalized appearance improvement system for men.
               Get a clear plan for your hair, skin, style, and daily habits
               based on you.
             </p>
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="mt-7 flex flex-col gap-3">
               <Link
                 href="/upload"
-                className="heglows-amber-button inline-flex h-12 items-center justify-center rounded-2xl px-5 text-sm font-semibold active:scale-[0.99]"
+                className="heglow-amber-button inline-flex h-12 items-center justify-center rounded-2xl px-5 text-sm font-semibold active:scale-[0.99]"
               >
                 Start your glow-up →
               </Link>
@@ -104,7 +104,7 @@ export default function Home() {
 
             <div className="rounded-3xl border border-[#f5a623]/14 bg-[#17130f] p-5 shadow-[0_0_40px_rgba(245,166,35,0.05)]">
               <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#d8ccc0]/55">
-                With HeGlows
+                With HeGlow
               </p>
 
               <div className="mt-4 space-y-3">
@@ -189,7 +189,7 @@ export default function Home() {
                   {/* Score */}
                   <div className="mx-3 mt-3 rounded-2xl border border-[#f5a623]/15 bg-[#191613] p-4">
                     <p className="text-center text-[7px] font-semibold uppercase tracking-[0.25em] text-[#f5a623]/70">
-                      HeGlows Score
+                      HeGlow Score
                     </p>
 
                     <div className="mt-1 flex items-end justify-center gap-1">
@@ -386,12 +386,12 @@ export default function Home() {
 
             <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#d8ccc0]/76">
               Upload a selfie, answer a few questions, and get your
-              personalized HeGlows roadmap.
+              personalized HeGlow roadmap.
             </p>
 
             <Link
               href="/upload"
-              className="heglows-amber-button mt-6 inline-flex h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold active:scale-[0.99]"
+              className="heglow-amber-button mt-6 inline-flex h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold active:scale-[0.99]"
             >
               Start my glow-up →
             </Link>

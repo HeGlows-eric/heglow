@@ -178,7 +178,7 @@ export default function QuestionnairePage() {
           </h1>
 
           <p className="mt-3 text-sm leading-6 text-[#d8ccc0]/70">
-            A few quick answers help HeGlows build a roadmap around your
+            A few quick answers help HeGlow build a roadmap around your
             appearance, lifestyle, and goals.
           </p>
         </div>

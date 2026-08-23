@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HeGlows",
+  title: "HeGlow",
   description:
     "Get a personalized glow-up plan built around your appearance, goals, and daily routine.",
 };

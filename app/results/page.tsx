@@ -55,7 +55,7 @@ export default function ResultsPage() {
 
           <div className="relative w-full rounded-[2rem] border border-[#f5a623]/15 bg-[#17130f] p-6 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f5a623]/70">
-              HeGlows
+              HeGlow
             </p>
 
             <h1 className="mt-3 text-2xl font-semibold text-[#fff8f0]">
@@ -167,7 +167,7 @@ export default function ResultsPage() {
             </div>
 
             <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f6efe8]/45">
-              HeGlows
+              HeGlow
             </span>
           </div>
         </header>
@@ -200,7 +200,7 @@ export default function ResultsPage() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#f5a623]" />
 
               <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#f5a623]/70">
-                HeGlows Score
+                HeGlow Score
               </p>
 
               <span className="h-1.5 w-1.5 rounded-full bg-[#f5a623]" />

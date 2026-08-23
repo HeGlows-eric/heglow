@@ -113,7 +113,7 @@ export default function UploadPage() {
           <p className="mt-3 text-sm leading-6 text-[#d8ccc0]/70">
             Start with a clear photo. Then answer a few questions about your
             hair, skin, style, and goals so we can build your personalized
-            HeGlows roadmap.
+            HeGlow roadmap.
           </p>
         </div>
 
@@ -175,7 +175,7 @@ export default function UploadPage() {
           </p>
 
           <p className="mt-2 text-xs leading-5 text-[#d8ccc0]/55">
-            Your selfie is used for your HeGlows experience, stored securely
+            Your selfie is used for your HeGlow experience, stored securely
             in our storage system, and is not publicly displayed or sold.
             Uploaded selfies are intended to be deleted within 72 hours.
           </p>

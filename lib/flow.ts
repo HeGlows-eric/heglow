@@ -4,7 +4,7 @@ export type FlowData = {
   answers?: Record<string, string>;
 };
 
-const KEY = "heglows_flow";
+const KEY = "heglow_flow";
 
 export function readFlow(): FlowData {
   if (typeof window === "undefined") return {};
