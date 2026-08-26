@@ -27,7 +27,7 @@ export default function LoadingPage() {
     }, 800);
 
     const resultTimer = window.setTimeout(() => {
-      router.replace("/results");
+      router.replace("/result");
     }, 3600);
 
     return () => {
@@ -42,7 +42,6 @@ export default function LoadingPage() {
 
       <div className="relative mx-auto flex min-h-[calc(100vh-3rem)] w-full max-w-md flex-col">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
-          {/* Logo */}
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#f5a623]/20 bg-[#f5a623]/10 text-sm font-bold tracking-[-0.08em] text-[#fff8f0] shadow-[0_0_35px_rgba(245,166,35,0.18)]">
             HG
           </div>
@@ -60,12 +59,10 @@ export default function LoadingPage() {
             your goals.
           </p>
 
-          {/* Loading indicator */}
           <div className="mt-10 flex h-16 w-16 items-center justify-center rounded-full border border-[#f5a623]/15 bg-[#17130f]">
             <div className="h-9 w-9 animate-spin rounded-full border-2 border-[#f5a623]/15 border-t-[#f5a623]" />
           </div>
 
-          {/* Progress steps */}
           <div className="mt-10 w-full space-y-3 text-left">
             {steps.map((step, index) => {
               const isComplete = index < activeStep;
