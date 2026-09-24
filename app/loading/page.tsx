@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -37,32 +36,39 @@ export default function LoadingPage() {
   }, [router]);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#0f0d0b] px-4 py-6 text-[#f6efe8]">
-      <div className="pointer-events-none absolute left-1/2 top-[12%] h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(245,166,35,0.26)_0%,rgba(245,166,35,0.10)_35%,rgba(245,166,35,0)_72%)] blur-3xl" />
+    <main className="relative min-h-screen overflow-hidden bg-[#05070a] px-4 py-6 text-[#f4f7fa]">
+      {/* Turquoise glow */}
+      <div className="pointer-events-none absolute left-1/2 top-[12%] h-[320px] w-[320px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(32,224,208,0.18)_0%,rgba(32,224,208,0.06)_35%,rgba(32,224,208,0)_72%)] blur-3xl" />
+
+      {/* Midnight-blue glow */}
+      <div className="pointer-events-none absolute left-1/2 top-[22%] h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(20,38,77,0.5)_0%,rgba(20,38,77,0)_72%)] blur-3xl" />
 
       <div className="relative mx-auto flex min-h-[calc(100vh-3rem)] w-full max-w-md flex-col">
         <div className="flex flex-1 flex-col items-center justify-center text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#f5a623]/20 bg-[#f5a623]/10 text-sm font-bold tracking-[-0.08em] text-[#fff8f0] shadow-[0_0_35px_rgba(245,166,35,0.18)]">
+          {/* Logo */}
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#20e0d0]/20 bg-[#20e0d0]/10 text-sm font-bold tracking-[-0.08em] text-[#f4f7fa] shadow-[0_0_35px_rgba(32,224,208,0.14)]">
             HG
           </div>
 
-          <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.35em] text-[#f5a623]/80">
+          <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.35em] text-[#20e0d0]/80">
             Step 3 of 4
           </p>
 
-          <h1 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#fff8f0]">
+          <h1 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#f4f7fa]">
             Building your glow-up plan
           </h1>
 
-          <p className="mt-3 max-w-sm text-sm leading-6 text-[#d8ccc0]/65">
+          <p className="mt-3 max-w-sm text-sm leading-6 text-[#8b98a8]/75">
             We're turning your answers into a focused roadmap built around
             your goals.
           </p>
 
-          <div className="mt-10 flex h-16 w-16 items-center justify-center rounded-full border border-[#f5a623]/15 bg-[#17130f]">
-            <div className="h-9 w-9 animate-spin rounded-full border-2 border-[#f5a623]/15 border-t-[#f5a623]" />
+          {/* Spinner */}
+          <div className="mt-10 flex h-16 w-16 items-center justify-center rounded-full border border-[#20e0d0]/15 bg-[#0b1119] shadow-[0_0_30px_rgba(32,224,208,0.05)]">
+            <div className="h-9 w-9 animate-spin rounded-full border-2 border-[#182535] border-t-[#20e0d0]" />
           </div>
 
+          {/* Progress steps */}
           <div className="mt-10 w-full space-y-3 text-left">
             {steps.map((step, index) => {
               const isComplete = index < activeStep;
@@ -71,15 +77,15 @@ export default function LoadingPage() {
               return (
                 <div
                   key={step}
-                  className="flex items-center gap-3 rounded-2xl border border-[#f5a623]/10 bg-[#17130f] px-4 py-3"
+                  className="flex items-center gap-3 rounded-2xl border border-[#20e0d0]/10 bg-[#0b1119] px-4 py-3 transition-colors"
                 >
                   <div
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold ${
                       isComplete
-                        ? "bg-[#f5a623] text-[#17100a]"
+                        ? "bg-[#20e0d0] text-[#03100e] shadow-[0_0_14px_rgba(32,224,208,0.18)]"
                         : isActive
-                          ? "border border-[#f5a623]/40 bg-[#f5a623]/10 text-[#f5b544]"
-                          : "border border-[#f5a623]/10 bg-[#0f0d0b] text-[#d8ccc0]/35"
+                          ? "border border-[#20e0d0]/40 bg-[#20e0d0]/10 text-[#20e0d0]"
+                          : "border border-[#182535] bg-[#05070a] text-[#8b98a8]/35"
                     }`}
                   >
                     {isComplete ? "✓" : index + 1}
@@ -88,8 +94,8 @@ export default function LoadingPage() {
                   <p
                     className={`text-sm ${
                       isComplete || isActive
-                        ? "text-[#f6efe8]/90"
-                        : "text-[#d8ccc0]/35"
+                        ? "text-[#f4f7fa]/90"
+                        : "text-[#8b98a8]/35"
                     }`}
                   >
                     {step}
@@ -99,7 +105,7 @@ export default function LoadingPage() {
             })}
           </div>
 
-          <p className="mt-8 text-[11px] leading-5 text-[#d8ccc0]/35">
+          <p className="mt-8 text-[11px] leading-5 text-[#8b98a8]/40">
             This usually takes just a few seconds.
           </p>
         </div>

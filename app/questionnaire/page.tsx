@@ -156,28 +156,30 @@ export default function QuestionnairePage() {
   };
 
   const selectClass =
-    "w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none focus:border-[#f5a623]/50";
+    "w-full rounded-2xl border border-[#20e0d0]/15 bg-[#05070a] px-4 py-3 text-[#f4f7fa] outline-none transition focus:border-[#20e0d0]/50 focus:ring-1 focus:ring-[#20e0d0]/20";
 
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-[#0f0d0b] px-4 py-6 text-[#f6efe8]">
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#05070a] px-4 py-6 text-[#f4f7fa]">
       <div className="mx-auto flex min-h-[calc(100vh-3rem)] w-full max-w-md flex-col">
+        {/* Back */}
         <button
           onClick={() => router.back()}
-          className="mb-6 w-fit rounded-full border border-[#f5a623]/15 bg-[#17130f] px-4 py-2 text-sm text-[#d8ccc0]/80 transition hover:border-[#f5a623]/30 hover:bg-[#211a14]"
+          className="mb-6 w-fit rounded-full border border-[#20e0d0]/15 bg-[#0b1119] px-4 py-2 text-sm text-[#8b98a8]/85 transition hover:border-[#20e0d0]/30 hover:bg-[#0d1833] hover:text-[#f4f7fa]"
         >
           ← Back
         </button>
 
+        {/* Header */}
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#f5a623]/75">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#20e0d0]/80">
             Step 2 of 4
           </p>
 
-          <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#fff8f0] sm:text-4xl">
+          <h1 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-[#f4f7fa] sm:text-4xl">
             Tell us about you.
           </h1>
 
-          <p className="mt-3 text-sm leading-6 text-[#d8ccc0]/70">
+          <p className="mt-3 text-sm leading-6 text-[#8b98a8]/80">
             A few quick answers help HeGlow build a roadmap around your
             appearance, lifestyle, and goals.
           </p>
@@ -185,10 +187,9 @@ export default function QuestionnairePage() {
 
         <form onSubmit={saveResponses} className="mt-8 flex flex-1 flex-col">
           <div className="space-y-4">
-
             {/* Hair */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 What's your hair type?
               </label>
 
@@ -208,8 +209,8 @@ export default function QuestionnairePage() {
             </div>
 
             {/* Facial Hair */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 What's your facial hair style?
               </label>
 
@@ -227,15 +228,15 @@ export default function QuestionnairePage() {
                 ))}
               </select>
 
-              <p className="mt-2 text-[11px] leading-5 text-[#d8ccc0]/40">
+              <p className="mt-2 text-[11px] leading-5 text-[#8b98a8]/45">
                 This helps us personalize your grooming and facial-hair
                 recommendations.
               </p>
             </div>
 
             {/* Face shape */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 What's your face shape?
               </label>
 
@@ -253,15 +254,15 @@ export default function QuestionnairePage() {
                 ))}
               </select>
 
-              <p className="mt-2 text-[11px] leading-5 text-[#d8ccc0]/40">
+              <p className="mt-2 text-[11px] leading-5 text-[#8b98a8]/45">
                 This helps us recommend hairstyles that complement your facial
                 proportions.
               </p>
             </div>
 
             {/* Skin type */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 What's your skin type?
               </label>
 
@@ -281,8 +282,8 @@ export default function QuestionnairePage() {
             </div>
 
             {/* Skin concern */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 What's your biggest skin concern?
               </label>
 
@@ -302,8 +303,8 @@ export default function QuestionnairePage() {
             </div>
 
             {/* Body */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 How would you describe your build?
               </label>
 
@@ -323,8 +324,8 @@ export default function QuestionnairePage() {
             </div>
 
             {/* Climate */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 What's your typical environment?
               </label>
 
@@ -344,13 +345,13 @@ export default function QuestionnairePage() {
             </div>
 
             {/* Age */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 How old are you?
               </label>
 
               <input
-                className="w-full rounded-2xl border border-[#f5a623]/15 bg-[#0f0d0b] px-4 py-3 text-[#f6efe8] outline-none placeholder:text-[#d8ccc0]/30 focus:border-[#f5a623]/50"
+                className="w-full rounded-2xl border border-[#20e0d0]/15 bg-[#05070a] px-4 py-3 text-[#f4f7fa] outline-none placeholder:text-[#8b98a8]/30 transition focus:border-[#20e0d0]/50 focus:ring-1 focus:ring-[#20e0d0]/20"
                 type="number"
                 min="10"
                 max="100"
@@ -361,8 +362,8 @@ export default function QuestionnairePage() {
             </div>
 
             {/* Goal */}
-            <div className="rounded-3xl border border-[#f5a623]/10 bg-[#17130f] p-4">
-              <label className="mb-2 block text-sm font-medium text-[#f6efe8]/90">
+            <div className="rounded-3xl border border-[#20e0d0]/10 bg-[#0b1119] p-4 transition hover:border-[#20e0d0]/15">
+              <label className="mb-2 block text-sm font-medium text-[#f4f7fa]/90">
                 What's your main goal?
               </label>
 
@@ -383,7 +384,7 @@ export default function QuestionnairePage() {
           </div>
 
           {status && (
-            <p className="mt-5 text-sm text-[#f5b544]">
+            <p className="mt-5 text-sm text-[#20e0d0]/90">
               {status}
             </p>
           )}
@@ -391,14 +392,13 @@ export default function QuestionnairePage() {
           <button
             type="submit"
             disabled={loading}
-            className="mt-6 h-14 w-full rounded-2xl bg-gradient-to-r from-[#ffc15a] to-[#f59b20] px-4 text-base font-semibold text-[#17100a] shadow-[0_8px_30px_rgba(245,166,35,0.2)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50"
+            className="mt-6 h-14 w-full rounded-2xl bg-gradient-to-r from-[#20e0d0] to-[#16cfc0] px-4 text-base font-semibold text-[#03100e] shadow-[0_8px_30px_rgba(32,224,208,0.18)] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? "Saving your answers..." : "Build my glow-up plan →"}
           </button>
 
-          <p className="mt-3 pb-4 text-center text-[11px] leading-5 text-[#d8ccc0]/40">
-           Next: we'll build your personalized roadmap.
-            roadmap.
+          <p className="mt-3 pb-4 text-center text-[11px] leading-5 text-[#8b98a8]/45">
+            Next: we'll build your personalized roadmap.
           </p>
         </form>
       </div>

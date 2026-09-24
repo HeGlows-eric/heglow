@@ -29,45 +29,45 @@ export default function LegalModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="legal-modal-title"
     >
       <div
-        className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-[#f5a623]/15 bg-[#17130f] p-6 shadow-[0_30px_100px_rgba(0,0,0,0.7)]"
+        className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-[#20e0d0]/15 bg-[#0b1119] p-6 shadow-[0_30px_100px_rgba(0,0,0,0.7)]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
           type="button"
           onClick={onClose}
-          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#f5a623]/10 bg-[#211a14] text-xl text-[#d8ccc0]/60 transition hover:text-[#fff8f0]"
+          className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#20e0d0]/10 bg-[#101925] text-xl text-[#8b98a8]/70 transition hover:border-[#20e0d0]/20 hover:text-[#f4f7fa]"
           aria-label="Close"
         >
           ×
         </button>
 
         <div className="pr-10">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#f5a623]/80">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#20e0d0]/85">
             HeGlow
           </p>
 
           <h2
             id="legal-modal-title"
-            className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-[#fff8f0]"
+            className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-[#f4f7fa]"
           >
             {isPrivacy ? "Privacy Policy" : "Terms of Service"}
           </h2>
 
-          <p className="mt-1 text-xs text-[#d8ccc0]/40">
+          <p className="mt-1 text-xs text-[#8b98a8]/50">
             Last updated: August 18, 2026
           </p>
 
           {isPrivacy ? (
-            <div className="mt-7 space-y-6 text-sm leading-6 text-[#d8ccc0]/75">
+            <div className="mt-7 space-y-6 text-sm leading-6 text-[#8b98a8]/85">
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   1. Overview
                 </h3>
 
@@ -80,7 +80,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   2. Information We Collect
                 </h3>
 
@@ -99,7 +99,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   3. Selfie and Image Data
                 </h3>
 
@@ -128,7 +128,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   4. How We Use Information
                 </h3>
 
@@ -141,7 +141,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   5. Analytics
                 </h3>
 
@@ -160,7 +160,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   6. Third-Party Service Providers
                 </h3>
 
@@ -178,7 +178,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   7. Data Security
                 </h3>
 
@@ -191,7 +191,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   8. Data Retention
                 </h3>
 
@@ -208,7 +208,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   9. Your Choices and Requests
                 </h3>
 
@@ -216,7 +216,7 @@ export default function LegalModal({
                   If you have a privacy question or believe information
                   associated with your use of HeGlow requires correction or
                   deletion, contact us at{" "}
-                  <span className="text-[#f5b544]">
+                  <span className="text-[#20e0d0]">
                     heglows.support@gmail.com
                   </span>
                   .
@@ -224,7 +224,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   10. Age Restrictions
                 </h3>
 
@@ -237,7 +237,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   11. Changes to This Policy
                 </h3>
 
@@ -250,7 +250,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   12. Contact
                 </h3>
 
@@ -258,15 +258,15 @@ export default function LegalModal({
                   For privacy-related questions or requests, contact:
                 </p>
 
-                <p className="mt-2 text-[#f5b544]">
+                <p className="mt-2 text-[#20e0d0]">
                   heglows.support@gmail.com
                 </p>
               </section>
             </div>
           ) : (
-            <div className="mt-7 space-y-6 text-sm leading-6 text-[#d8ccc0]/75">
+            <div className="mt-7 space-y-6 text-sm leading-6 text-[#8b98a8]/85">
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   1. Acceptance of These Terms
                 </h3>
 
@@ -278,7 +278,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   2. What HeGlow Provides
                 </h3>
 
@@ -292,7 +292,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   3. Informational Purpose
                 </h3>
 
@@ -313,7 +313,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   4. User-Provided Information
                 </h3>
 
@@ -333,7 +333,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   5. Selfie Uploads
                 </h3>
 
@@ -352,7 +352,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   6. Acceptable Use
                 </h3>
 
@@ -365,7 +365,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   7. Service Availability and Changes
                 </h3>
 
@@ -377,7 +377,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   8. Third-Party Services
                 </h3>
 
@@ -391,7 +391,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   9. Intellectual Property
                 </h3>
 
@@ -409,7 +409,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   10. Your Responsibility for Recommendations
                 </h3>
 
@@ -424,7 +424,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   11. Limitation of Liability
                 </h3>
 
@@ -443,7 +443,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   12. Termination or Restriction
                 </h3>
 
@@ -456,7 +456,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   13. Governing Law and Jurisdiction
                 </h3>
 
@@ -471,7 +471,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   14. Changes to These Terms
                 </h3>
 
@@ -484,7 +484,7 @@ export default function LegalModal({
               </section>
 
               <section>
-                <h3 className="mb-2 font-semibold text-[#fff8f0]">
+                <h3 className="mb-2 font-semibold text-[#f4f7fa]">
                   15. Contact
                 </h3>
 
@@ -492,7 +492,7 @@ export default function LegalModal({
                   Questions about these Terms can be sent to:
                 </p>
 
-                <p className="mt-2 text-[#f5b544]">
+                <p className="mt-2 text-[#20e0d0]">
                   heglows.support@gmail.com
                 </p>
               </section>

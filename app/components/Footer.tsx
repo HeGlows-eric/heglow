@@ -8,23 +8,23 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="border-t border-[#f5a623]/10 py-5">
+      <footer className="border-t border-[#20e0d0]/10 py-5">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#f5a623]/20 bg-[#f5a623]/10 text-[9px] font-bold tracking-[-0.08em] text-[#fff8f0]">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-[#20e0d0]/20 bg-[#20e0d0]/10 text-[9px] font-bold tracking-[-0.08em] text-[#f4f7fa]">
               HG
             </div>
 
-            <span className="text-sm text-[#d8ccc0]/55">
+            <span className="text-sm text-[#8b98a8]/70">
               HeGlow
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-[11px] text-[#d8ccc0]/50">
+          <div className="flex items-center gap-4 text-[11px] text-[#8b98a8]/60">
             <button
               type="button"
               onClick={() => setModal("privacy")}
-              className="transition hover:text-[#f5a623]"
+              className="transition hover:text-[#20e0d0]"
             >
               Privacy Policy
             </button>
@@ -32,14 +32,14 @@ export default function Footer() {
             <button
               type="button"
               onClick={() => setModal("terms")}
-              className="transition hover:text-[#f5a623]"
+              className="transition hover:text-[#20e0d0]"
             >
               Terms of Service
             </button>
           </div>
         </div>
 
-        <p className="mt-3 text-[10px] text-[#d8ccc0]/35">
+        <p className="mt-3 text-[10px] text-[#8b98a8]/40">
           © 2026 HeGlow
         </p>
       </footer>
