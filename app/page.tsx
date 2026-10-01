@@ -1,406 +1,618 @@
 import Link from "next/link";
-import Footer from "./components/Footer";
+import type { ReactNode } from "react";
+
+/**
+ * Lovable landing-page assets
+ */
+const beforeImage =
+  "https://id-preview--7846045f-6f71-4533-b66b-01cdc9f6d2db.lovable.app/__l5e/assets-v1/7a097b87-983c-40f8-87f2-b43d8d3404a4/before.jpeg";
+
+const afterImage =
+  "https://id-preview--7846045f-6f71-4533-b66b-01cdc9f6d2db.lovable.app/__l5e/assets-v1/ec463e17-3173-471b-9770-10bb76d02073/after.jpeg";
+
+function Logo() {
+  return (
+    <Link href="/" className="flex items-center gap-2">
+      <div className="relative grid h-7 w-7 place-items-center rounded-full bg-[radial-gradient(circle_at_30%_30%,oklch(0.95_0.12_85),oklch(0.55_0.15_50))] shadow-[0_0_20px_-2px_oklch(0.82_0.15_70)]">
+        <span className="text-[10px] font-black text-[oklch(0.16_0.01_60)]">
+          H
+        </span>
+      </div>
+
+      <span className="text-base font-semibold tracking-tight text-white">
+        He
+        <span className="bg-gradient-to-b from-[oklch(0.98_0.02_85)] to-[oklch(0.82_0.13_75)] bg-clip-text text-transparent">
+          Glows
+        </span>
+      </span>
+    </Link>
+  );
+}
+
+function ArrowIcon() {
+  return (
+    <svg
+      className="ml-2 h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14M13 5l7 7-7 7" />
+    </svg>
+  );
+}
+
+function CTAButton({
+  children,
+  full = false,
+}: {
+  children: ReactNode;
+  full?: boolean;
+}) {
+  return (
+    <Link
+      href="/upload"
+      className={`inline-flex items-center justify-center rounded-full px-6 py-3.5 text-sm font-semibold tracking-tight text-[oklch(0.16_0.01_60)] transition-transform duration-150 hover:-translate-y-px sm:px-7 sm:py-4 sm:text-base ${
+        full ? "w-full" : ""
+      }`}
+      style={{
+        background:
+          "linear-gradient(180deg, oklch(0.88 0.14 80) 0%, oklch(0.72 0.16 60) 100%)",
+        boxShadow:
+          "0 0 0 1px color-mix(in oklab, oklch(0.82 0.15 70) 30%, transparent), 0 10px 40px -10px color-mix(in oklab, oklch(0.82 0.15 70) 50%, transparent), inset 0 1px 0 oklch(1 0 0 / 0.4)",
+      }}
+    >
+      {children}
+      <ArrowIcon />
+    </Link>
+  );
+}
+
+function FeatureCard({
+  icon,
+  title,
+  desc,
+}: {
+  icon: ReactNode;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <div
+      className="rounded-2xl p-4 sm:p-5"
+      style={{
+        background:
+          "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+        border:
+          "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 12%, oklch(0.30 0.01 60))",
+        boxShadow:
+          "0 1px 0 oklch(1 0 0 / 0.04) inset, 0 20px 40px -30px oklch(0 0 0 / 0.8)",
+      }}
+    >
+      <div
+        className="grid h-9 w-9 place-items-center rounded-xl sm:h-10 sm:w-10"
+        style={{
+          background:
+            "color-mix(in oklab, oklch(0.82 0.15 70) 15%, transparent)",
+          color: "oklch(0.82 0.13 75)",
+        }}
+      >
+        {icon}
+      </div>
+
+      <h3 className="mt-3 text-sm font-semibold text-[oklch(0.97_0.01_80)] sm:mt-4 sm:text-base">
+        {title}
+      </h3>
+
+      <p className="mt-1.5 text-[13px] leading-relaxed text-[oklch(0.70_0.02_70)] sm:text-sm">
+        {desc}
+      </p>
+    </div>
+  );
+}
+
+function Icon({ d }: { d: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d={d} />
+    </svg>
+  );
+}
+
+const faqs = [
+  {
+    question: "How does HeGlows work?",
+    answer:
+      "Upload a clear selfie and HeGlows analyzes your appearance to generate personalized recommendations for your hairstyle, grooming, style, and overall presentation.",
+  },
+  {
+    question: "Do I need to create an account?",
+    answer:
+      "No. You can start your analysis without signing up. Just upload your selfie and begin.",
+  },
+  {
+    question: "How long does the analysis take?",
+    answer:
+      "Your personalized glow-up plan is designed to be generated in about 60 seconds.",
+  },
+  {
+    question: "What kind of selfie should I upload?",
+    answer:
+      "Use a clear, front-facing photo with good lighting. Avoid sunglasses, heavy filters, and photos where your face is mostly hidden.",
+  },
+  {
+    question: "What will my results include?",
+    answer:
+      "Your results focus on practical, high-impact improvements such as hairstyle direction, grooming, style choices, and your next steps.",
+  },
+];
 
 export default function Home() {
   return (
-    <main className="relative min-h-dvh overflow-hidden bg-[#05070a] text-[#f4f7fa]">
-      {/* Hero glow */}
-      <div className="pointer-events-none absolute left-1/2 top-[-150px] h-[320px] w-[620px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(32,224,208,0.22)_0%,rgba(32,224,208,0.09)_32%,rgba(32,224,208,0)_72%)] blur-3xl" />
+    <main className="min-h-screen w-full overflow-x-hidden bg-[oklch(0.16_0.008_60)] text-[oklch(0.97_0.01_80)]">
+      {/* NAV */}
+      <header className="mx-auto flex w-full max-w-2xl items-center justify-between px-4 pt-5 sm:px-5 sm:pt-6">
+        <Logo />
 
-      <div className="pointer-events-none absolute left-1/2 top-[-20px] h-[220px] w-[420px] -translate-x-1/2 bg-[radial-gradient(circle,rgba(20,38,77,0.65)_0%,rgba(20,38,77,0)_72%)] blur-3xl" />
+        <a
+          href="#cta"
+          className="text-xs font-medium text-[oklch(0.70_0.02_70)] transition-colors hover:text-[oklch(0.97_0.01_80)]"
+        >
+          Try free
+        </a>
+      </header>
 
-      <div className="relative mx-auto flex min-h-dvh w-full max-w-md flex-col px-4 py-4 sm:px-6">
-        {/* Header */}
-        <header className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-[#20e0d0]/20 bg-[#20e0d0]/10 text-[10px] font-bold tracking-[-0.08em] text-[#f4f7fa] shadow-[0_0_24px_rgba(32,224,208,0.12)]">
-              HG
-            </div>
-
-            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#f4f7fa]/55">
-              HeGlow
-            </p>
+      {/* HERO */}
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background: `
+            radial-gradient(
+              60% 50% at 50% 0%,
+              color-mix(in oklab, oklch(0.82 0.15 70) 22%, transparent) 0%,
+              transparent 70%
+            ),
+            radial-gradient(
+              40% 30% at 80% 20%,
+              color-mix(in oklab, oklch(0.70 0.12 50) 18%, transparent) 0%,
+              transparent 70%
+            ),
+            oklch(0.16 0.008 60)
+          `,
+        }}
+      >
+        <div className="mx-auto w-full max-w-2xl px-4 pb-14 pt-10 sm:px-5 sm:pb-16 sm:pt-16">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[oklch(0.30_0.01_60_/_60%)] bg-[oklch(0.20_0.01_60_/_60%)] px-3 py-1.5 text-xs text-[oklch(0.70_0.02_70)] backdrop-blur">
+            <span
+              className="h-1.5 w-1.5 shrink-0 rounded-full"
+              style={{
+                background: "oklch(0.82 0.13 75)",
+                boxShadow: "0 0 8px oklch(0.82 0.15 70)",
+              }}
+            />
+            AI glow-up engine for men
           </div>
 
-          <Link
-            href="/upload"
-            className="rounded-full border border-[#20e0d0]/20 bg-[#20e0d0]/5 px-3 py-1 text-[11px] text-[#f4f7fa]/75 transition hover:border-[#20e0d0]/35 hover:bg-[#20e0d0]/10"
+          <h1 className="text-balance text-[2.15rem] font-black leading-[1.06] tracking-[-0.025em] sm:text-5xl sm:tracking-tight">
+            Upload a Selfie and Get Your{" "}
+            <span className="bg-gradient-to-b from-[oklch(0.98_0.02_85)] to-[oklch(0.82_0.13_75)] bg-clip-text text-transparent">
+              Personal Glow-Up Plan
+            </span>{" "}
+            in 60 Seconds
+          </h1>
+
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[oklch(0.70_0.02_70)] sm:text-lg">
+            HeGlows analyzes your face, hair, skin, and overall appearance to
+            show you the highest-impact changes for your glow up — including
+            hairstyle, grooming, style, and more.
+          </p>
+
+          <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8">
+            <CTAButton full>Upload your selfie</CTAButton>
+
+            <p className="text-center text-xs text-[oklch(0.70_0.02_70)]">
+              Free • No signup • Results in 60 seconds
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* BEFORE / AFTER */}
+      <section className="mx-auto w-full max-w-2xl px-4 py-14 sm:px-5 sm:py-16">
+        <div className="text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[oklch(0.82_0.13_75)]">
+            My 6-month transformation
+          </p>
+
+          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+            This transformation is what inspired HeGlows.
+          </h2>
+        </div>
+
+        <div className="mt-7 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-5">
+          <figure
+            className="overflow-hidden rounded-2xl"
+            style={{
+              background:
+                "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+              border:
+                "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 12%, oklch(0.30 0.01 60))",
+            }}
           >
-            Try free
-          </Link>
-        </header>
-
-        {/* Hero */}
-        <section className="flex flex-1 flex-col justify-start py-10">
-          <div className="w-full">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#20e0d0]/20 bg-[#20e0d0]/5 px-3 py-1 text-[11px] text-[#20e0d0]/90">
-              <span className="h-2 w-2 rounded-full bg-[#20e0d0] shadow-[0_0_12px_rgba(32,224,208,0.7)]" />
-              Built for men who want to level up
-            </div>
-
-            <h1 className="max-w-sm text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-[#f4f7fa] sm:text-5xl">
-              Your glow-up.
-              <br />
-              <span className="heglow-highlight">Your game plan.</span>
-            </h1>
-
-            <p className="mt-4 max-w-sm text-sm leading-6 text-[#8b98a8]/80">
-              HeGlow is a personalized appearance improvement system for men.
-              Get a clear plan for your hair, skin, style, and daily habits
-              based on you.
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3">
-              <Link
-                href="/upload"
-                className="heglow-primary-button inline-flex h-12 items-center justify-center rounded-2xl px-5 text-sm font-semibold active:scale-[0.99]"
-              >
-                Start your glow-up →
-              </Link>
-
-              <a
-                href="#preview"
-                className="inline-flex h-12 items-center justify-center rounded-2xl border border-[#20e0d0]/15 bg-[#0d1833] px-5 text-sm font-medium text-[#f4f7fa]/90 transition hover:border-[#20e0d0]/30 hover:bg-[#14264d] active:scale-[0.99]"
-              >
-                See what you get
-              </a>
-            </div>
-
-            <p className="mt-4 text-[12px] text-[#f4f7fa]/55">
-              Free • No signup • Personalized in about 60 seconds
-            </p>
-          </div>
-
-          {/* Before / After */}
-          <div className="mt-12 grid gap-4">
-            <div className="rounded-3xl border border-[#20e0d0]/12 bg-[#0b1119] p-5 shadow-[0_0_40px_rgba(32,224,208,0.035)]">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#8b98a8]/60">
-                Without a plan
-              </p>
-
-              <div className="mt-4 space-y-3">
-                <div className="rounded-2xl border border-[#182535] bg-[#05070a] p-4">
-                  <p className="text-sm text-[#8b98a8]/85">
-                    You know you want to improve, but don't know what to fix
-                    first.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#182535] bg-[#05070a] p-4">
-                  <p className="text-sm text-[#8b98a8]/85">
-                    Hair, skin, style, and appearance advice is scattered
-                    everywhere.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#182535] bg-[#05070a] p-4">
-                  <p className="text-sm text-[#8b98a8]/85">
-                    You keep trying random changes without knowing what will
-                    make the biggest difference.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-3xl border border-[#20e0d0]/12 bg-[#0b1119] p-5 shadow-[0_0_40px_rgba(32,224,208,0.035)]">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#8b98a8]/60">
-                With HeGlow
-              </p>
-
-              <div className="mt-4 space-y-3">
-                <div className="rounded-2xl border border-[#182535] bg-[#05070a] p-4">
-                  <p className="text-sm text-[#8b98a8]/85">
-                    Know your highest-impact improvements first.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#182535] bg-[#05070a] p-4">
-                  <p className="text-sm text-[#8b98a8]/85">
-                    Get personalized direction for your hair, skin, style,
-                    and appearance.
-                  </p>
-                </div>
-
-                <div className="rounded-2xl border border-[#182535] bg-[#05070a] p-4">
-                  <p className="text-sm text-[#8b98a8]/85">
-                    Follow one focused plan instead of guessing.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Product preview */}
-          <div id="preview" className="mt-16">
-            <div className="text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#20e0d0]/85">
-                Your personalized report
-              </p>
-
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-[#f4f7fa]">
-                See what's behind the curtain
-              </h2>
-
-              <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#8b98a8]/75">
-                A preview of the kind of personalized roadmap you'll get after
-                completing your profile.
-              </p>
-            </div>
-
-            {/* Phone preview */}
-            <div className="relative mt-10 flex justify-center">
-              {/* Primary phone glow */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(32,224,208,0.20)_0%,rgba(32,224,208,0.07)_32%,rgba(32,224,208,0)_72%)] blur-3xl"
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={beforeImage}
+                alt="Before transformation"
+                className="h-full w-full object-cover grayscale-[20%]"
+                loading="lazy"
               />
 
-              {/* Secondary midnight-blue glow */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute left-1/2 top-[42%] h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-[#14264d]/35 blur-[80px]"
+              <span className="absolute left-2 top-2 rounded-full bg-[oklch(0.16_0.008_60_/_80%)] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-[oklch(0.70_0.02_70)] backdrop-blur">
+                Before
+              </span>
+            </div>
+          </figure>
+
+          <figure
+            className="overflow-hidden rounded-2xl"
+            style={{
+              background:
+                "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+              border:
+                "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 25%, transparent)",
+            }}
+          >
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={afterImage}
+                alt="After transformation"
+                className="h-full w-full object-cover"
+                loading="lazy"
               />
 
-              {/* Phone */}
-              <div className="relative w-[292px] rounded-[2.6rem] border-[7px] border-[#020305] bg-[#030406] p-2 shadow-[0_30px_90px_rgba(0,0,0,0.7),0_0_90px_rgba(32,224,208,0.14)]">
-                {/* Phone top speaker */}
-                <div className="pointer-events-none absolute left-1/2 top-2 z-20 h-1 w-12 -translate-x-1/2 rounded-full bg-[#26313e]" />
-
-                <div className="overflow-hidden rounded-[2rem] border border-[#20e0d0]/10 bg-[#080d14]">
-                  {/* Mini result header */}
-                  <div className="px-4 pb-2 pt-7">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-[7px] font-semibold uppercase tracking-[0.25em] text-[#20e0d0]/70">
-                          Your glow report
-                        </p>
-
-                        <p className="mt-1 text-[13px] font-semibold text-[#f4f7fa]">
-                          Your personalized result
-                        </p>
-                      </div>
-
-                      <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-[#20e0d0]/15 bg-[#20e0d0]/8 text-[7px] font-bold text-[#f4f7fa]">
-                        HG
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Score */}
-                  <div className="mx-3 mt-3 rounded-2xl border border-[#20e0d0]/15 bg-[#0d1833] p-4">
-                    <p className="text-center text-[7px] font-semibold uppercase tracking-[0.25em] text-[#20e0d0]/70">
-                      HeGlow Score
-                    </p>
-
-                    <div className="mt-1 flex items-end justify-center gap-1">
-                      <span className="heglow-highlight heglow-glow text-[38px] font-bold leading-none">
-                        74
-                      </span>
-
-                      <span className="mb-1 text-[9px] text-[#8b98a8]/50">
-                        /100
-                      </span>
-                    </div>
-
-                    <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-[#182535]">
-                      <div className="h-full w-[74%] rounded-full bg-gradient-to-r from-[#16cfc0] to-[#4af1e3]" />
-                    </div>
-
-                    <p className="mt-2 text-center text-[8px] font-medium text-[#8b98a8]/75">
-                      Strong baseline. High upside.
-                    </p>
-                  </div>
-
-                  {/* Hairstyle */}
-                  <div className="mx-3 mt-3 rounded-2xl border border-[#20e0d0]/10 bg-[#0d1833] p-4">
-                    <div className="flex items-center justify-between">
-                      <p className="text-[7px] font-semibold uppercase tracking-[0.2em] text-[#8b98a8]/50">
-                        Best hairstyle
-                      </p>
-
-                      <span className="rounded-full border border-[#20e0d0]/10 bg-[#14264d] px-2 py-0.5 text-[6px] uppercase tracking-wider text-[#20e0d0]/70">
-                        Matched
-                      </span>
-                    </div>
-
-                    <p className="mt-2 text-[14px] font-semibold leading-tight text-[#f4f7fa]">
-                      Textured Mid-Length Crop
-                    </p>
-
-                    <p className="mt-1 text-[8px] leading-4 text-[#8b98a8]/60">
-                      Adds texture and movement while keeping your proportions
-                      balanced.
-                    </p>
-
-                    <div className="mt-3 flex gap-1.5">
-                      <span className="rounded-full bg-[#14264d] px-2 py-1 text-[6px] text-[#8b98a8]/70">
-                        Wavy hair
-                      </span>
-
-                      <span className="rounded-full bg-[#14264d] px-2 py-1 text-[6px] text-[#8b98a8]/70">
-                        Oval face
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Top 3 */}
-                  <div className="mx-3 mt-3 rounded-2xl border border-[#20e0d0]/10 bg-[#0d1833] p-4">
-                    <p className="text-[7px] font-semibold uppercase tracking-[0.2em] text-[#8b98a8]/50">
-                      Top 3 improvements
-                    </p>
-
-                    <div className="mt-3 space-y-2.5">
-                      {[
-                        "Improve hairstyle direction",
-                        "Build a consistent skin routine",
-                        "Upgrade overall presentation",
-                      ].map((item, index) => (
-                        <div key={item} className="flex items-center gap-2">
-                          <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#4af1e3] to-[#16cfc0] text-[7px] font-bold text-[#03100e] shadow-[0_4px_12px_rgba(32,224,208,0.14)]">
-                            {index + 1}
-                          </span>
-
-                          <p className="text-[8px] font-medium leading-3 text-[#f4f7fa]/85">
-                            {item}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Product suggestions */}
-                  <div className="mx-3 mb-3 mt-3 rounded-2xl border border-[#20e0d0]/10 bg-[#0d1833] p-4">
-                    <p className="text-[7px] font-semibold uppercase tracking-[0.2em] text-[#8b98a8]/50">
-                      Product suggestions
-                    </p>
-
-                    <div className="mt-3 grid grid-cols-3 gap-1.5">
-                      {["Matte Clay", "Brow Gel", "SPF 50"].map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-xl border border-[#182535] bg-[#14264d] p-2 text-center"
-                        >
-                          <div className="mx-auto flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#4af1e3] to-[#16cfc0] shadow-[0_4px_12px_rgba(32,224,208,0.12)]" />
-
-                          <p className="mt-2 text-[6px] font-semibold leading-3 text-[#f4f7fa]/80">
-                            {item}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <span
+                className="absolute left-2 top-2 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider"
+                style={{
+                  background: "oklch(0.82 0.13 75)",
+                  color: "oklch(0.18 0.01 60)",
+                }}
+              >
+                After
+              </span>
             </div>
-          </div>
+          </figure>
+        </div>
+      </section>
 
-          {/* What you get */}
-          <div className="mt-16">
-            <div className="text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#20e0d0]/85">
-                What you get
-              </p>
+      {/* WHAT YOU GET */}
+      <section className="mx-auto w-full max-w-2xl px-4 py-10 sm:px-5 sm:py-12">
+        <div className="text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[oklch(0.82_0.13_75)]">
+            What you get
+          </p>
 
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-[#f4f7fa]">
-                Know exactly what to work on
-              </h2>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+            A full report on your highest-impact upgrades
+          </h2>
+        </div>
 
-              <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#8b98a8]/75">
-                Your report turns your answers and profile into a practical
-                appearance roadmap built around your priorities.
-              </p>
-            </div>
+        <div className="mt-7 grid grid-cols-1 gap-2.5 sm:mt-8 sm:grid-cols-2 sm:gap-3">
+          <FeatureCard
+            icon={
+              <Icon d="M4 20c2-6 6-9 8-9s6 3 8 9M8 8a4 4 0 118 0c0 3-2 5-4 5s-4-2-4-5z" />
+            }
+            title="Best hairstyle"
+            desc="Find the haircut that fits your face and features."
+          />
 
-            <div className="mt-7 grid gap-4">
-              <div className="rounded-3xl border border-[#20e0d0]/12 bg-[#0b1119] p-5 shadow-[0_0_40px_rgba(32,224,208,0.035)]">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#20e0d0]/15 bg-[#20e0d0]/8 text-xs font-semibold text-[#20e0d0]">
-                  01
-                </div>
+          <FeatureCard
+            icon={
+              <Icon d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+            }
+            title="Grooming upgrades"
+            desc="Discover the highest-impact improvements for your face and presentation."
+          />
 
-                <h3 className="text-lg font-semibold text-[#f4f7fa]">
-                  Hair direction
-                </h3>
+          <FeatureCard
+            icon={<Icon d="M6 3h12l-2 6h-8L6 3zM8 9v12M16 9v12M4 21h16" />}
+            title="Style direction"
+            desc="See what aesthetic and styling choices suit you best."
+          />
 
-                <p className="mt-2 text-sm leading-6 text-[#8b98a8]/80">
-                  Get a hairstyle matched to your hair type and facial
-                  proportions.
-                </p>
-              </div>
+          <FeatureCard
+            icon={<Icon d="M3 12l4-4 4 4 4-6 6 8M3 20h18" />}
+            title="Glow-up roadmap"
+            desc="Get your top 3 most important next moves."
+          />
+        </div>
+      </section>
 
-              <div className="rounded-3xl border border-[#20e0d0]/12 bg-[#0b1119] p-5 shadow-[0_0_40px_rgba(32,224,208,0.035)]">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#20e0d0]/15 bg-[#20e0d0]/8 text-xs font-semibold text-[#20e0d0]">
-                  02
-                </div>
-
-                <h3 className="text-lg font-semibold text-[#f4f7fa]">
-                  Skin routine
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-[#8b98a8]/80">
-                  Get a simple skincare direction based on your skin type and
-                  biggest concerns.
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-[#20e0d0]/12 bg-[#0b1119] p-5 shadow-[0_0_40px_rgba(32,224,208,0.035)]">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#20e0d0]/15 bg-[#20e0d0]/8 text-xs font-semibold text-[#20e0d0]">
-                  03
-                </div>
-
-                <h3 className="text-lg font-semibold text-[#f4f7fa]">
-                  Product suggestions
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-[#8b98a8]/80">
-                  See product categories selected around your hair, skin, and
-                  appearance goals.
-                </p>
-              </div>
-
-              <div className="rounded-3xl border border-[#20e0d0]/12 bg-[#0b1119] p-5 shadow-[0_0_40px_rgba(32,224,208,0.035)]">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl border border-[#20e0d0]/15 bg-[#20e0d0]/8 text-xs font-semibold text-[#20e0d0]">
-                  04
-                </div>
-
-                <h3 className="text-lg font-semibold text-[#f4f7fa]">
-                  Daily action plan
-                </h3>
-
-                <p className="mt-2 text-sm leading-6 text-[#8b98a8]/80">
-                  Get the most important next moves so you know exactly where
-                  to start.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Final CTA */}
-          <div className="mt-14 rounded-[2rem] border border-[#20e0d0]/14 bg-[linear-gradient(180deg,rgba(32,224,208,0.07),rgba(13,24,51,0.95))] px-5 py-8 text-center shadow-[0_0_60px_rgba(32,224,208,0.06)]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.35em] text-[#20e0d0]/85">
-              Built for men
+      {/* RESULTS PREVIEW */}
+      <section
+        className="relative px-4 py-14 sm:px-5 sm:py-16"
+        style={{
+          background: `
+            radial-gradient(
+              60% 50% at 50% 0%,
+              color-mix(in oklab, oklch(0.82 0.15 70) 22%, transparent) 0%,
+              transparent 70%
+            ),
+            radial-gradient(
+              40% 30% at 80% 20%,
+              color-mix(in oklab, oklch(0.70 0.12 50) 18%, transparent) 0%,
+              transparent 70%
+            ),
+            oklch(0.16 0.008 60)
+          `,
+        }}
+      >
+        <div className="mx-auto w-full max-w-md">
+          <div className="text-center">
+            <p className="text-xs font-medium uppercase tracking-[0.18em] text-[oklch(0.82_0.13_75)]">
+              Sample result
             </p>
 
-            <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-[#f4f7fa]">
-              Find your highest-impact upgrades
+            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+              Here's what you'll get
             </h2>
-
-            <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-[#8b98a8]/80">
-              Upload a selfie, answer a few questions, and get your
-              personalized HeGlow roadmap.
-            </p>
-
-            <Link
-              href="/upload"
-              className="heglow-primary-button mt-6 inline-flex h-12 items-center justify-center rounded-2xl px-6 text-sm font-semibold active:scale-[0.99]"
-            >
-              Start my glow-up →
-            </Link>
           </div>
-        </section>
 
-        {/* Legal Footer */}
-        <Footer />
-      </div>
+          {/* PHONE MOCKUP */}
+          <div
+            className="mx-auto mt-7 w-full max-w-[340px] rounded-[2rem] border border-[oklch(0.30_0.01_60_/_60%)] p-1.5 sm:mt-8 sm:max-w-sm sm:rounded-[2.2rem] sm:p-2"
+            style={{
+              background: "oklch(0.10 0.005 60)",
+              boxShadow:
+                "0 40px 80px -30px oklch(0 0 0 / 0.8), 0 0 60px -20px oklch(0.82 0.15 70)",
+            }}
+          >
+            <div className="overflow-hidden rounded-[1.55rem] bg-[oklch(0.20_0.01_60)] sm:rounded-[1.8rem]">
+              {/* Notch */}
+              <div className="flex justify-center pt-2.5">
+                <div className="h-1 w-14 rounded-full bg-[oklch(0.30_0.01_60)] sm:w-16" />
+              </div>
+
+              <div className="space-y-3 p-3.5 sm:space-y-4 sm:p-5">
+                {/* SCORE */}
+                <div
+                  className="rounded-2xl p-4 text-center sm:p-5"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+                    border:
+                      "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 12%, oklch(0.30 0.01 60))",
+                  }}
+                >
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[oklch(0.70_0.02_70)] sm:text-[11px]">
+                    HeGlows Score
+                  </p>
+
+                  <div className="mt-1.5 flex items-baseline justify-center gap-1 sm:mt-2">
+                    <span className="bg-gradient-to-b from-[oklch(0.98_0.02_85)] to-[oklch(0.82_0.13_75)] bg-clip-text text-4xl font-black text-transparent sm:text-5xl">
+                      7.4
+                    </span>
+
+                    <span className="text-base font-semibold text-[oklch(0.70_0.02_70)] sm:text-lg">
+                      /10
+                    </span>
+                  </div>
+
+                  <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-[oklch(0.26_0.012_60)] sm:mt-3">
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        width: "74%",
+                        background:
+                          "linear-gradient(90deg, oklch(0.72 0.16 60), oklch(0.88 0.14 85))",
+                      }}
+                    />
+                  </div>
+
+                  <p className="mt-2 text-[11px] text-[oklch(0.70_0.02_70)] sm:text-xs">
+                    Strong baseline. High upside.
+                  </p>
+                </div>
+
+                {/* BEST HAIRSTYLE */}
+                <div
+                  className="rounded-2xl p-3.5 sm:p-4"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+                    border:
+                      "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 12%, oklch(0.30 0.01 60))",
+                  }}
+                >
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[oklch(0.70_0.02_70)] sm:text-[11px]">
+                    Best hairstyle
+                  </p>
+
+                  <p className="mt-1 text-sm font-semibold sm:text-base">
+                    Textured Mid-Length Crop
+                  </p>
+
+                  <p className="mt-1 text-[11px] leading-relaxed text-[oklch(0.70_0.02_70)] sm:text-xs">
+                    Adds height + softens your jawline ratio.
+                  </p>
+                </div>
+
+                {/* TOP 3 */}
+                <div
+                  className="rounded-2xl p-3.5 sm:p-4"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+                    border:
+                      "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 12%, oklch(0.30 0.01 60))",
+                  }}
+                >
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[oklch(0.70_0.02_70)] sm:text-[11px]">
+                    Top 3 improvements
+                  </p>
+
+                  <ul className="mt-2 space-y-2">
+                    {[
+                      "Define brow shape",
+                      "Lean body fat -4%",
+                      "Switch to warm-tone wardrobe",
+                    ].map((item, index) => (
+                      <li
+                        key={item}
+                        className="flex items-center gap-2.5 text-xs sm:gap-3 sm:text-sm"
+                      >
+                        <span
+                          className="grid h-6 w-6 shrink-0 place-items-center rounded-full text-[10px] font-bold sm:text-xs"
+                          style={{
+                            background: "oklch(0.82 0.13 75)",
+                            color: "oklch(0.18 0.01 60)",
+                          }}
+                        >
+                          {index + 1}
+                        </span>
+
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* PRODUCTS */}
+                <div
+                  className="rounded-2xl p-3.5 sm:p-4"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+                    border:
+                      "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 12%, oklch(0.30 0.01 60))",
+                  }}
+                >
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[oklch(0.70_0.02_70)] sm:text-[11px]">
+                    Product suggestions
+                  </p>
+
+                  <div className="mt-2 grid grid-cols-3 gap-1.5 sm:gap-2">
+                    {["Matte Clay", "Brow Gel", "SPF 50"].map((product) => (
+                      <div
+                        key={product}
+                        className="rounded-xl p-2.5 text-center text-[10px] font-medium sm:p-3 sm:text-[11px]"
+                        style={{
+                          border:
+                            "1px solid oklch(0.30 0.01 60 / 60%)",
+                          background: "oklch(0.26 0.012 60 / 60%)",
+                        }}
+                      >
+                        <div
+                          className="mx-auto mb-1.5 h-7 w-7 rounded-lg sm:h-8 sm:w-8"
+                          style={{
+                            background:
+                              "radial-gradient(circle_at_30%_30%,oklch(0.85_0.12_80),oklch(0.4_0.05_60))",
+                          }}
+                        />
+
+                        {product}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="mx-auto w-full max-w-2xl px-4 py-12 sm:px-5 sm:py-16">
+        <div className="text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-[oklch(0.82_0.13_75)]">
+            FAQ
+          </p>
+
+          <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+            Questions, answered.
+          </h2>
+
+          <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-[oklch(0.70_0.02_70)]">
+            Everything you need to know before starting your glow-up.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-7 w-full max-w-xl space-y-2.5 sm:mt-8 sm:space-y-3">
+          {faqs.map((faq) => (
+            <details
+              key={faq.question}
+              className="group overflow-hidden rounded-2xl"
+              style={{
+                background:
+                  "linear-gradient(180deg, oklch(0.22 0.01 60) 0%, oklch(0.18 0.008 60) 100%)",
+                border:
+                  "1px solid color-mix(in oklab, oklch(0.82 0.15 70) 12%, oklch(0.30 0.01 60))",
+                boxShadow:
+                  "0 1px 0 oklch(1 0 0 / 0.04) inset, 0 15px 35px -30px oklch(0 0 0 / 0.8)",
+              }}
+            >
+              <summary className="flex min-h-[58px] cursor-pointer list-none items-center justify-between gap-3 px-4 py-3.5 text-[13px] font-semibold sm:px-5 sm:py-4 sm:text-sm">
+                <span>{faq.question}</span>
+
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-[oklch(0.30_0.01_60_/_70%)] text-[oklch(0.70_0.02_70)] transition-transform duration-200 group-open:rotate-45">
+                  <span className="text-lg font-light leading-none">+</span>
+                </span>
+              </summary>
+
+              <div className="px-4 pb-4 text-[13px] leading-relaxed text-[oklch(0.70_0.02_70)] sm:px-5 sm:pb-5 sm:text-sm">
+                {faq.answer}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section id="cta" className="px-4 py-16 sm:px-5 sm:py-20">
+        <div className="mx-auto w-full max-w-xl text-center">
+          <h2 className="text-balance text-[1.9rem] font-black leading-tight tracking-tight sm:text-4xl">
+            Discover your{" "}
+            <span className="bg-gradient-to-b from-[oklch(0.98_0.02_85)] to-[oklch(0.82_0.13_75)] bg-clip-text text-transparent">
+              best look
+            </span>{" "}
+            today
+          </h2>
+
+          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[oklch(0.70_0.02_70)] sm:text-base">
+            Join the men leveling up their appearance with AI-powered
+            analysis.
+          </p>
+
+          <div className="mx-auto mt-7 max-w-md sm:mt-8">
+            <CTAButton full>Try HeGlows now</CTAButton>
+
+            <p className="mt-3 text-center text-xs text-[oklch(0.70_0.02_70)]">
+              Free • No signup • Results in 60 seconds
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="border-t border-[oklch(0.30_0.01_60_/_60%)] px-4 py-7 sm:px-5 sm:py-8">
+        <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 text-xs text-[oklch(0.70_0.02_70)]">
+          <Logo />
+
+          <p>© {new Date().getFullYear()} HeGlows</p>
+        </div>
+      </footer>
     </main>
   );
 }
